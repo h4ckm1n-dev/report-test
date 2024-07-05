@@ -10,18 +10,17 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 ### Métriques de Sévérité
 | Type de CVE  | Nombre | Pourcentage du total |
 |--------------|--------|----------------------|
-| CVE Critiques | 9 | 5.0% |
-| CVE Élevées  | 57 | 31.7% |
-| CVE Moyennes  | 104 | 57.8% |
-| CVE Basses  | 2 | 1.1% |
-| CVE Inconnues  | 8 | 4.4% |
+| CVE Critiques | 7 | 5.0% |
+| CVE Élevées  | 37 | 26.4% |
+| CVE Moyennes  | 96 | 68.6% |
+| CVE Basses  | 0 | 0.0% |
+| CVE Inconnues  | 0 | 0.0% |
 
 > **Note:** Le reste du rapport se concentre uniquement sur les CVE critiques et élevées afin de donner la priorité aux vulnérabilités qui présentent le plus grand risque pour la sécurité du système.
 
 ### Métriques Spécifiques aux Applications
 | Application | CVE Critiques | CVE Élevées | Total CVE |
 |-------------|---------------|-------------|-----------|
-| kyverno | 1 | 20 | 21 |
 | velero | 4 | 16 | 20 |
 | amazon-cloudwatch | 0 | 6 | 6 |
 | rabbitmq | 0 | 6 | 6 |
@@ -29,25 +28,25 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 | postgresql | 0 | 4 | 4 |
 | trivy | 1 | 1 | 2 |
 | kube-prometheus-stack | 1 | 0 | 1 |
-| kube-system | 1 | 0 | 1 |
 | policy-reporter | 1 | 0 | 1 |
 | backend-ddf | 0 | 0 | 0 |
 | gitlab-agent | 0 | 0 | 0 |
+| kube-system | 0 | 0 | 0 |
+| kyverno | 0 | 0 | 0 |
 
 ### Métriques Spécifiques aux Bibliothèques
 | Bibliothèque | Applications Affectées | Total CVE |
 |--------------|-----------------------|-----------|
-| stdlib | gitlab-agent, kube-prometheus-stack, kube-system, trivy, velero, kyverno, policy-reporter | 7 |
-| libssl3 | backend-ddf, rabbitmq, postgresql, trivy, keycloak | 5 |
-| libgnutls30 | postgresql, rabbitmq, kyverno, keycloak | 4 |
-| libsystemd0 | postgresql, rabbitmq, keycloak | 3 |
-| libudev1 | postgresql, rabbitmq, keycloak | 3 |
-| openssl | postgresql, rabbitmq, keycloak | 3 |
+| stdlib | velero, policy-reporter, kyverno, kube-prometheus-stack, gitlab-agent, trivy | 6 |
+| libssl3 | keycloak, backend-ddf, rabbitmq, postgresql, trivy | 5 |
+| libgnutls30 | keycloak, rabbitmq, postgresql | 3 |
+| libsystemd0 | keycloak, rabbitmq, postgresql | 3 |
+| libudev1 | keycloak, rabbitmq, postgresql | 3 |
+| openssl | keycloak, rabbitmq, postgresql | 3 |
+| github.com/Azure/azure-sdk-for-go/sdk/azidentity | kyverno, kube-prometheus-stack, trivy | 3 |
 | curl | amazon-cloudwatch, rabbitmq | 2 |
-| libcrypto3 | backend-ddf, trivy | 2 |
-| github.com/Azure/azure-sdk-for-go/sdk/azidentity | trivy, kube-prometheus-stack | 2 |
-| golang.org/x/net | velero, kyverno | 2 |
-| google.golang.org/protobuf | velero, kyverno | 2 |
+| libcrypto3 | trivy, backend-ddf | 2 |
+| golang.org/x/net | kyverno, velero | 2 |
 | glibc | amazon-cloudwatch | 1 |
 | glibc-common | amazon-cloudwatch | 1 |
 | glibc-langpack-en | amazon-cloudwatch | 1 |
@@ -57,61 +56,41 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 | libnghttp2 | amazon-cloudwatch | 1 |
 | openssl11-devel | amazon-cloudwatch | 1 |
 | openssl11-libs | amazon-cloudwatch | 1 |
-| bsdutils | kyverno | 1 |
-| libblkid1 | kyverno | 1 |
-| libc-bin | kyverno | 1 |
-| libc6 | kyverno | 1 |
-| libcurl3-gnutls | kyverno | 1 |
-| libmount1 | kyverno | 1 |
-| libperl5.32 | kyverno | 1 |
-| libsmartcols1 | kyverno | 1 |
-| libssh2-1 | kyverno | 1 |
-| libuuid1 | kyverno | 1 |
-| mount | kyverno | 1 |
-| perl | kyverno | 1 |
-| perl-base | kyverno | 1 |
-| perl-modules-5.32 | kyverno | 1 |
-| tar | kyverno | 1 |
-| util-linux | kyverno | 1 |
+| github.com/hashicorp/go-retryablehttp | kyverno | 1 |
 | libcurl4 | rabbitmq | 1 |
 | busybox | trivy | 1 |
 | busybox-binsh | trivy | 1 |
 | ssl_client | trivy | 1 |
 | github.com/hashicorp/go-getter | trivy | 1 |
 | google.golang.org/grpc | velero | 1 |
+| google.golang.org/protobuf | velero | 1 |
 
 ### Observations Clés
-* kyverno est l'application la plus affectée avec un total de 21 CVE.
-* velero a également un nombre significatif de CVE (20).
+* velero est l'application la plus affectée avec un total de 20 CVE.
 * amazon-cloudwatch a également un nombre significatif de CVE (6).
-* La majorité des CVE sont classées comme étant de haute gravité (32%), avec seulement une petite fraction étant critiques (5%).
-* La bibliothèque stdlib est récurrente à travers plusieurs CVE et applications (gitlab-agent, kube-prometheus-stack, kube-system, trivy, velero, kyverno, policy-reporter), indiquant des vulnérabilités communes dans cette bibliothèque.
-* La bibliothèque libssl3 est récurrente à travers plusieurs CVE et applications (backend-ddf, rabbitmq, postgresql, trivy, keycloak), indiquant des vulnérabilités communes dans cette bibliothèque.
-* La bibliothèque libgnutls30 est récurrente à travers plusieurs CVE et applications (postgresql, rabbitmq, kyverno, keycloak), indiquant des vulnérabilités communes dans cette bibliothèque.
+* rabbitmq a également un nombre significatif de CVE (6).
+* La majorité des CVE sont classées comme étant de haute gravité (26%), avec seulement une petite fraction étant critiques (5%).
+* La bibliothèque stdlib est récurrente à travers plusieurs CVE et applications (velero, policy-reporter, kyverno, kube-prometheus-stack, gitlab-agent, trivy), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque libssl3 est récurrente à travers plusieurs CVE et applications (keycloak, backend-ddf, rabbitmq, postgresql, trivy), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque libgnutls30 est récurrente à travers plusieurs CVE et applications (keycloak, rabbitmq, postgresql), indiquant des vulnérabilités communes dans cette bibliothèque.
 
 ## Liste Détaillée des CVE
 ### Sommaire
 
 | CVE ID | Applications |
 |--------|--------------|
-| [CVE-2024-24790](#cve-2024-24790) | trivy, kyverno, kube-prometheus-stack, velero, kube-system, policy-reporter |
+| [CVE-2024-24790](#cve-2024-24790) | kube-prometheus-stack, velero, policy-reporter, trivy |
 | [CVE-2023-24540](#cve-2023-24540) | velero |
-| [CVE-2024-2961](#cve-2024-2961) | amazon-cloudwatch, kyverno |
-| [CVE-2024-28085](#cve-2024-28085) | kyverno |
-| [CVE-2023-47038](#cve-2023-47038) | kyverno |
+| [CVE-2024-2961](#cve-2024-2961) | amazon-cloudwatch |
 | [CVE-2023-29403](#cve-2023-29403) | velero |
 | [CVE-2024-6257](#cve-2024-6257) | trivy |
-| [CVE-2024-33599](#cve-2024-33599) | kyverno |
-| [CVE-2023-50387](#cve-2023-50387) | postgresql, rabbitmq, keycloak |
-| [CVE-2023-50868](#cve-2023-50868) | postgresql, rabbitmq, keycloak |
-| [CVE-2024-2398](#cve-2024-2398) | rabbitmq, kyverno |
-| [CVE-2024-0553](#cve-2024-0553) | kyverno |
-| [CVE-2024-0567](#cve-2024-0567) | kyverno |
-| [CVE-2020-22218](#cve-2020-22218) | kyverno |
+| [CVE-2023-50387](#cve-2023-50387) | keycloak, rabbitmq, postgresql |
+| [CVE-2023-50868](#cve-2023-50868) | keycloak, rabbitmq, postgresql |
+| [CVE-2024-2398](#cve-2024-2398) | rabbitmq |
 | [CVE-2023-39325](#cve-2023-39325) | velero |
 | [CVE-2023-45283](#cve-2023-45283) | velero |
 | [CVE-2023-45287](#cve-2023-45287) | velero |
-| [CVE-2023-45288](#cve-2023-45288) | velero, kyverno |
+| [CVE-2023-45288](#cve-2023-45288) | velero |
 | [GHSA-m425-mq94-257g](#ghsa-m425-mq94-257g) | velero |
 | [CVE-2023-24539](#cve-2023-24539) | velero |
 | [CVE-2023-29400](#cve-2023-29400) | velero |
@@ -123,24 +102,6 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Applications Affectées:** kube-prometheus-stack
 **Details:**
 - stdlib (Versions: 1.22.3)
-- Titre: golang: net/netip: Unexpected behavior from Is methods for IPv4-mapped IPv6 addresses
-- Date de publication: 2024-06-05T16:15:10Z)
-- Dernière modification: 2024-06-18T17:59:12Z)
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24790
-#### CVE-2024-24790
-**Gravité:** CRITICAL (9.8)
-**Applications Affectées:** kube-system
-**Details:**
-- stdlib (Versions: 1.22.3)
-- Titre: golang: net/netip: Unexpected behavior from Is methods for IPv4-mapped IPv6 addresses
-- Date de publication: 2024-06-05T16:15:10Z)
-- Dernière modification: 2024-06-18T17:59:12Z)
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24790
-#### CVE-2024-24790
-**Gravité:** CRITICAL (9.8)
-**Applications Affectées:** kyverno
-**Details:**
-- stdlib (Versions: 1.20.12)
 - Titre: golang: net/netip: Unexpected behavior from Is methods for IPv4-mapped IPv6 addresses
 - Date de publication: 2024-06-05T16:15:10Z)
 - Dernière modification: 2024-06-18T17:59:12Z)
@@ -246,123 +207,6 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-04-17T18:15:15Z)
 - Dernière modification: 2024-07-03T01:53:40Z)
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-2961
-#### CVE-2024-2961
-**Gravité:** HIGH (8.8)
-**Applications Affectées:** kyverno
-**Details:**
-- libc-bin (Versions: 2.31-13+deb11u7)
-- Titre: glibc: Out of bounds write in iconv may lead to remote code execution
-- Date de publication: 2024-04-17T18:15:15Z)
-- Dernière modification: 2024-07-03T01:53:40Z)
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-2961
-#### CVE-2024-2961
-**Gravité:** HIGH (8.8)
-**Applications Affectées:** kyverno
-**Details:**
-- libc6 (Versions: 2.31-13+deb11u7)
-- Titre: glibc: Out of bounds write in iconv may lead to remote code execution
-- Date de publication: 2024-04-17T18:15:15Z)
-- Dernière modification: 2024-07-03T01:53:40Z)
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-2961
-#### CVE-2024-28085
-**Gravité:** HIGH (8.4)
-**Applications Affectées:** kyverno
-**Details:**
-- bsdutils (Versions: 1:2.36.1-8+deb11u1)
-- Titre: util-linux: CVE-2024-28085: wall: escape sequence injection
-- Date de publication: 2024-03-27T19:15:48Z)
-- Dernière modification: 2024-06-10T17:16:24Z)
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-28085
-#### CVE-2024-28085
-**Gravité:** HIGH (8.4)
-**Applications Affectées:** kyverno
-**Details:**
-- libblkid1 (Versions: 2.36.1-8+deb11u1)
-- Titre: util-linux: CVE-2024-28085: wall: escape sequence injection
-- Date de publication: 2024-03-27T19:15:48Z)
-- Dernière modification: 2024-06-10T17:16:24Z)
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-28085
-#### CVE-2024-28085
-**Gravité:** HIGH (8.4)
-**Applications Affectées:** kyverno
-**Details:**
-- libmount1 (Versions: 2.36.1-8+deb11u1)
-- Titre: util-linux: CVE-2024-28085: wall: escape sequence injection
-- Date de publication: 2024-03-27T19:15:48Z)
-- Dernière modification: 2024-06-10T17:16:24Z)
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-28085
-#### CVE-2024-28085
-**Gravité:** HIGH (8.4)
-**Applications Affectées:** kyverno
-**Details:**
-- libsmartcols1 (Versions: 2.36.1-8+deb11u1)
-- Titre: util-linux: CVE-2024-28085: wall: escape sequence injection
-- Date de publication: 2024-03-27T19:15:48Z)
-- Dernière modification: 2024-06-10T17:16:24Z)
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-28085
-#### CVE-2024-28085
-**Gravité:** HIGH (8.4)
-**Applications Affectées:** kyverno
-**Details:**
-- libuuid1 (Versions: 2.36.1-8+deb11u1)
-- Titre: util-linux: CVE-2024-28085: wall: escape sequence injection
-- Date de publication: 2024-03-27T19:15:48Z)
-- Dernière modification: 2024-06-10T17:16:24Z)
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-28085
-#### CVE-2024-28085
-**Gravité:** HIGH (8.4)
-**Applications Affectées:** kyverno
-**Details:**
-- mount (Versions: 2.36.1-8+deb11u1)
-- Titre: util-linux: CVE-2024-28085: wall: escape sequence injection
-- Date de publication: 2024-03-27T19:15:48Z)
-- Dernière modification: 2024-06-10T17:16:24Z)
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-28085
-#### CVE-2024-28085
-**Gravité:** HIGH (8.4)
-**Applications Affectées:** kyverno
-**Details:**
-- util-linux (Versions: 2.36.1-8+deb11u1)
-- Titre: util-linux: CVE-2024-28085: wall: escape sequence injection
-- Date de publication: 2024-03-27T19:15:48Z)
-- Dernière modification: 2024-06-10T17:16:24Z)
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-28085
-#### CVE-2023-47038
-**Gravité:** HIGH (7.8)
-**Applications Affectées:** kyverno
-**Details:**
-- libperl5.32 (Versions: 5.32.1-4+deb11u2)
-- Titre: perl: Write past buffer end via illegal user-defined Unicode property
-- Date de publication: 2023-12-18T14:15:08Z)
-- Dernière modification: 2024-05-30T14:15:09Z)
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-47038
-#### CVE-2023-47038
-**Gravité:** HIGH (7.8)
-**Applications Affectées:** kyverno
-**Details:**
-- perl (Versions: 5.32.1-4+deb11u2)
-- Titre: perl: Write past buffer end via illegal user-defined Unicode property
-- Date de publication: 2023-12-18T14:15:08Z)
-- Dernière modification: 2024-05-30T14:15:09Z)
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-47038
-#### CVE-2023-47038
-**Gravité:** HIGH (7.8)
-**Applications Affectées:** kyverno
-**Details:**
-- perl-base (Versions: 5.32.1-4+deb11u2)
-- Titre: perl: Write past buffer end via illegal user-defined Unicode property
-- Date de publication: 2023-12-18T14:15:08Z)
-- Dernière modification: 2024-05-30T14:15:09Z)
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-47038
-#### CVE-2023-47038
-**Gravité:** HIGH (7.8)
-**Applications Affectées:** kyverno
-**Details:**
-- perl-modules-5.32 (Versions: 5.32.1-4+deb11u2)
-- Titre: perl: Write past buffer end via illegal user-defined Unicode property
-- Date de publication: 2023-12-18T14:15:08Z)
-- Dernière modification: 2024-05-30T14:15:09Z)
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-47038
 #### CVE-2023-29403
 **Gravité:** HIGH (7.8)
 **Applications Affectées:** velero
@@ -390,24 +234,6 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-06-25T17:15:10Z)
 - Dernière modification: 2024-06-25T18:50:42Z)
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-6257
-#### CVE-2024-33599
-**Gravité:** HIGH (7.6)
-**Applications Affectées:** kyverno
-**Details:**
-- libc-bin (Versions: 2.31-13+deb11u7)
-- Titre: glibc: stack-based buffer overflow in netgroup cache
-- Date de publication: 2024-05-06T20:15:11Z)
-- Dernière modification: 2024-06-30T15:15:09Z)
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-33599
-#### CVE-2024-33599
-**Gravité:** HIGH (7.6)
-**Applications Affectées:** kyverno
-**Details:**
-- libc6 (Versions: 2.31-13+deb11u7)
-- Titre: glibc: stack-based buffer overflow in netgroup cache
-- Date de publication: 2024-05-06T20:15:11Z)
-- Dernière modification: 2024-06-30T15:15:09Z)
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-33599
 #### CVE-2023-50387
 **Gravité:** HIGH (7.5)
 **Applications Affectées:** keycloak
@@ -444,42 +270,6 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-02-14T16:15:45Z)
 - Dernière modification: 2024-06-10T17:16:16Z)
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-50868
-#### CVE-2024-2398
-**Gravité:** HIGH (7.5)
-**Applications Affectées:** kyverno
-**Details:**
-- libcurl3-gnutls (Versions: 7.74.0-1.3+deb11u11)
-- Titre: curl: HTTP/2 push headers memory-leak
-- Date de publication: 2024-03-27T08:15:41Z)
-- Dernière modification: 2024-07-03T01:53:12Z)
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-2398
-#### CVE-2024-0553
-**Gravité:** HIGH (7.5)
-**Applications Affectées:** kyverno
-**Details:**
-- libgnutls30 (Versions: 3.7.1-5+deb11u3)
-- Titre: gnutls: incomplete fix for CVE-2023-5981
-- Date de publication: 2024-01-16T12:15:45Z)
-- Dernière modification: 2024-06-27T12:15:17Z)
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-0553
-#### CVE-2024-0567
-**Gravité:** HIGH (7.5)
-**Applications Affectées:** kyverno
-**Details:**
-- libgnutls30 (Versions: 3.7.1-5+deb11u3)
-- Titre: gnutls: rejects certificate chain with distributed trust
-- Date de publication: 2024-01-16T14:15:48Z)
-- Dernière modification: 2024-06-27T12:15:17Z)
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-0567
-#### CVE-2020-22218
-**Gravité:** HIGH (7.5)
-**Applications Affectées:** kyverno
-**Details:**
-- libssh2-1 (Versions: 1.9.0-2)
-- Titre: libssh2: use-of-uninitialized-value in _libssh2_transport_read
-- Date de publication: 2023-08-22T19:16:19Z)
-- Dernière modification: 2023-10-06T15:15:12Z)
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2020-22218
 #### CVE-2023-50387
 **Gravité:** HIGH (7.5)
 **Applications Affectées:** postgresql
@@ -705,12 +495,3 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-04-04T15:15:38Z)
 - Dernière modification: 2024-05-01T18:15:17Z)
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-28182
-#### CVE-2023-45288
-**Gravité:** HIGH (5.3)
-**Applications Affectées:** kyverno
-**Details:**
-- stdlib (Versions: 1.20.12)
-- Titre: golang: net/http, x/net/http2: unlimited number of CONTINUATION frames causes DoS
-- Date de publication: 2024-04-04T21:15:16Z)
-- Dernière modification: 2024-05-01T18:15:10Z)
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45288
