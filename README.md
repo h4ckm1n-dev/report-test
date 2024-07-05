@@ -37,15 +37,15 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 ### Métriques Spécifiques aux Bibliothèques
 | Bibliothèque | Applications Affectées | Total CVE |
 |--------------|-----------------------|-----------|
-| stdlib | gitlab-agent, kyverno, policy-reporter, velero, kube-prometheus-stack, kube-system, trivy | 7 |
-| libssl3 | postgresql, trivy, keycloak, backend-ddf, rabbitmq | 5 |
-| libgnutls30 | postgresql, keycloak, kyverno, rabbitmq | 4 |
-| libsystemd0 | postgresql, keycloak, rabbitmq | 3 |
-| libudev1 | postgresql, keycloak, rabbitmq | 3 |
-| openssl | postgresql, keycloak, rabbitmq | 3 |
+| stdlib | trivy, gitlab-agent, kyverno, kube-system, kube-prometheus-stack, velero, policy-reporter | 7 |
+| libssl3 | trivy, postgresql, rabbitmq, keycloak, backend-ddf | 5 |
+| libgnutls30 | kyverno, postgresql, rabbitmq, keycloak | 4 |
+| libsystemd0 | postgresql, rabbitmq, keycloak | 3 |
+| libudev1 | postgresql, rabbitmq, keycloak | 3 |
+| openssl | postgresql, rabbitmq, keycloak | 3 |
 | curl | amazon-cloudwatch, rabbitmq | 2 |
 | libcrypto3 | backend-ddf, trivy | 2 |
-| github.com/Azure/azure-sdk-for-go/sdk/azidentity | kube-prometheus-stack, trivy | 2 |
+| github.com/Azure/azure-sdk-for-go/sdk/azidentity | trivy, kube-prometheus-stack | 2 |
 | golang.org/x/net | velero, kyverno | 2 |
 | google.golang.org/protobuf | velero, kyverno | 2 |
 | glibc | amazon-cloudwatch | 1 |
@@ -85,16 +85,16 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 * velero a également un nombre significatif de CVE (20).
 * amazon-cloudwatch a également un nombre significatif de CVE (6).
 * La majorité des CVE sont classées comme étant de haute gravité (32%), avec seulement une petite fraction étant critiques (5%).
-* La bibliothèque stdlib est récurrente à travers plusieurs CVE et applications (gitlab-agent, kyverno, policy-reporter, velero, kube-prometheus-stack, kube-system, trivy), indiquant des vulnérabilités communes dans cette bibliothèque.
-* La bibliothèque libssl3 est récurrente à travers plusieurs CVE et applications (postgresql, trivy, keycloak, backend-ddf, rabbitmq), indiquant des vulnérabilités communes dans cette bibliothèque.
-* La bibliothèque libgnutls30 est récurrente à travers plusieurs CVE et applications (postgresql, keycloak, kyverno, rabbitmq), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque stdlib est récurrente à travers plusieurs CVE et applications (trivy, gitlab-agent, kyverno, kube-system, kube-prometheus-stack, velero, policy-reporter), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque libssl3 est récurrente à travers plusieurs CVE et applications (trivy, postgresql, rabbitmq, keycloak, backend-ddf), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque libgnutls30 est récurrente à travers plusieurs CVE et applications (kyverno, postgresql, rabbitmq, keycloak), indiquant des vulnérabilités communes dans cette bibliothèque.
 
 ## Liste Détaillée des CVE
 ### Sommaire
 
 | CVE ID | Applications |
 |--------|--------------|
-| [CVE-2024-24790](#cve-2024-24790) | policy-reporter, kube-prometheus-stack, kyverno, velero, kube-system, trivy |
+| [CVE-2024-24790](#cve-2024-24790) | trivy, kube-system, kube-prometheus-stack, velero, policy-reporter, kyverno |
 | [CVE-2023-24540](#cve-2023-24540) | velero |
 | [CVE-2024-2961](#cve-2024-2961) | amazon-cloudwatch, kyverno |
 | [CVE-2024-28085](#cve-2024-28085) | kyverno |
@@ -102,9 +102,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 | [CVE-2023-29403](#cve-2023-29403) | velero |
 | [CVE-2024-6257](#cve-2024-6257) | trivy |
 | [CVE-2024-33599](#cve-2024-33599) | kyverno |
-| [CVE-2023-50387](#cve-2023-50387) | postgresql, keycloak, rabbitmq |
-| [CVE-2023-50868](#cve-2023-50868) | postgresql, keycloak, rabbitmq |
-| [CVE-2024-2398](#cve-2024-2398) | kyverno, rabbitmq |
+| [CVE-2023-50387](#cve-2023-50387) | postgresql, rabbitmq, keycloak |
+| [CVE-2023-50868](#cve-2023-50868) | postgresql, rabbitmq, keycloak |
+| [CVE-2024-2398](#cve-2024-2398) | rabbitmq, kyverno |
 | [CVE-2024-0553](#cve-2024-0553) | kyverno |
 | [CVE-2024-0567](#cve-2024-0567) | kyverno |
 | [CVE-2020-22218](#cve-2020-22218) | kyverno |
