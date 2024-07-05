@@ -37,16 +37,16 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 ### Métriques Spécifiques aux Bibliothèques
 | Bibliothèque | Applications Affectées | Total CVE |
 |--------------|-----------------------|-----------|
-| stdlib | velero, policy-reporter, kyverno, kube-prometheus-stack, gitlab-agent, trivy | 6 |
-| libssl3 | keycloak, backend-ddf, rabbitmq, postgresql, trivy | 5 |
+| stdlib | kube-prometheus-stack, velero, kyverno, policy-reporter, trivy, gitlab-agent | 6 |
+| libssl3 | backend-ddf, rabbitmq, keycloak, trivy, postgresql | 5 |
 | libgnutls30 | keycloak, rabbitmq, postgresql | 3 |
 | libsystemd0 | keycloak, rabbitmq, postgresql | 3 |
 | libudev1 | keycloak, rabbitmq, postgresql | 3 |
 | openssl | keycloak, rabbitmq, postgresql | 3 |
-| github.com/Azure/azure-sdk-for-go/sdk/azidentity | kyverno, kube-prometheus-stack, trivy | 3 |
+| github.com/Azure/azure-sdk-for-go/sdk/azidentity | kube-prometheus-stack, trivy, kyverno | 3 |
 | curl | amazon-cloudwatch, rabbitmq | 2 |
-| libcrypto3 | trivy, backend-ddf | 2 |
-| golang.org/x/net | kyverno, velero | 2 |
+| libcrypto3 | backend-ddf, trivy | 2 |
+| golang.org/x/net | velero, kyverno | 2 |
 | glibc | amazon-cloudwatch | 1 |
 | glibc-common | amazon-cloudwatch | 1 |
 | glibc-langpack-en | amazon-cloudwatch | 1 |
@@ -70,8 +70,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 * amazon-cloudwatch a également un nombre significatif de CVE (6).
 * rabbitmq a également un nombre significatif de CVE (6).
 * La majorité des CVE sont classées comme étant de haute gravité (26%), avec seulement une petite fraction étant critiques (5%).
-* La bibliothèque stdlib est récurrente à travers plusieurs CVE et applications (velero, policy-reporter, kyverno, kube-prometheus-stack, gitlab-agent, trivy), indiquant des vulnérabilités communes dans cette bibliothèque.
-* La bibliothèque libssl3 est récurrente à travers plusieurs CVE et applications (keycloak, backend-ddf, rabbitmq, postgresql, trivy), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque stdlib est récurrente à travers plusieurs CVE et applications (kube-prometheus-stack, velero, kyverno, policy-reporter, trivy, gitlab-agent), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque libssl3 est récurrente à travers plusieurs CVE et applications (backend-ddf, rabbitmq, keycloak, trivy, postgresql), indiquant des vulnérabilités communes dans cette bibliothèque.
 * La bibliothèque libgnutls30 est récurrente à travers plusieurs CVE et applications (keycloak, rabbitmq, postgresql), indiquant des vulnérabilités communes dans cette bibliothèque.
 
 ## Liste Détaillée des CVE
@@ -79,7 +79,7 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 
 | CVE ID | Applications |
 |--------|--------------|
-| [CVE-2024-24790](#cve-2024-24790) | kube-prometheus-stack, velero, policy-reporter, trivy |
+| [CVE-2024-24790](#cve-2024-24790) | policy-reporter, kube-prometheus-stack, trivy, velero |
 | [CVE-2023-24540](#cve-2023-24540) | velero |
 | [CVE-2024-2961](#cve-2024-2961) | amazon-cloudwatch |
 | [CVE-2023-29403](#cve-2023-29403) | velero |
