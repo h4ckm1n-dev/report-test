@@ -6,7 +6,8 @@
 ## Rapport sur les CVE pour le Cluster de Production
 
 ### Aperçu 
-Ce rapport fournit une liste détaillée des vulnérabilités et expositions communes (CVE) présentes dans le cluster de production. Chaque entrée inclut l'identifiant CVE, l'application affectée, et les bibliothèques ou composants associés. Le rapport démontre que toutes les CVE répertoriées sont dues à des mises à jour non publiées par leurs mainteneurs respectifs. Nous utilisons un outil appelé **Renovate** pour être notifiés des mises à jour de composants disponibles sur notre cluster, garantissant que nous exécutons toujours la dernière version mise à disposition par le mainteneur.
+> **Information:**
+> Ce rapport fournit une liste détaillée des vulnérabilités et expositions communes (CVE) présentes dans le cluster de production. Chaque entrée inclut l'identifiant CVE, l'application affectée, et les bibliothèques ou composants associés. Le rapport démontre que toutes les CVE répertoriées sont dues à des mises à jour non publiées par leurs mainteneurs respectifs. Nous utilisons un outil appelé **Renovate** pour être notifiés des mises à jour de composants disponibles sur notre cluster, garantissant que nous exécutons toujours la dernière version mise à disposition par le mainteneur.
 
 ### Métriques de Sévérité
 | **Type de CVE**  | **Nombre** | **Pourcentage du total** |
@@ -35,15 +36,15 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 ### Métriques Spécifiques aux Bibliothèques
 | **Bibliothèque** | **Applications Affectées** | **Total CVE** |
 |--------------|-----------------------|-----------|
-| stdlib | gitlab-agent, kyverno, policy-reporter, kube-prometheus-stack, trivy, velero | 22 |
-| libssl3 | keycloak, postgresql, rabbitmq, backend-ddf, trivy | 6 |
-| libgnutls30 | postgresql, keycloak, rabbitmq | 2 |
-| libsystemd0 | postgresql, keycloak, rabbitmq | 2 |
-| libudev1 | postgresql, keycloak, rabbitmq | 2 |
-| openssl | postgresql, keycloak, rabbitmq | 4 |
-| github.com/Azure/azure-sdk-for-go/sdk/azidentity | kyverno, trivy, kube-prometheus-stack | 1 |
-| curl | rabbitmq, amazon-cloudwatch | 2 |
-| libcrypto3 | backend-ddf, trivy | 2 |
+| stdlib | gitlab-agent, trivy, velero, policy-reporter, kyverno, kube-prometheus-stack | 22 |
+| libssl3 | keycloak, postgresql, trivy, rabbitmq, backend-ddf | 6 |
+| libgnutls30 | keycloak, postgresql, rabbitmq | 2 |
+| libsystemd0 | keycloak, postgresql, rabbitmq | 2 |
+| libudev1 | keycloak, postgresql, rabbitmq | 2 |
+| openssl | keycloak, postgresql, rabbitmq | 4 |
+| github.com/Azure/azure-sdk-for-go/sdk/azidentity | trivy, kyverno, kube-prometheus-stack | 1 |
+| curl | amazon-cloudwatch, rabbitmq | 2 |
+| libcrypto3 | trivy, backend-ddf | 2 |
 | golang.org/x/net | kyverno, velero | 4 |
 | glibc | amazon-cloudwatch | 1 |
 | glibc-common | amazon-cloudwatch | 1 |
@@ -68,9 +69,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 > - **rabbitmq** a également un nombre significatif de CVE (**18**).
 > - **trivy** a également un nombre significatif de CVE (**15**).
 > - La majorité des CVE sont classées comme étant de haute gravité (**26%**), avec seulement une petite fraction étant critiques (**5%**).
-> - La bibliothèque **stdlib** est récurrente à travers plusieurs CVE et applications (gitlab-agent, kyverno, policy-reporter, kube-prometheus-stack, trivy, velero), indiquant des vulnérabilités communes dans cette bibliothèque.
-> - La bibliothèque **libssl3** est récurrente à travers plusieurs CVE et applications (keycloak, postgresql, rabbitmq, backend-ddf, trivy), indiquant des vulnérabilités communes dans cette bibliothèque.
-> - La bibliothèque **libgnutls30** est récurrente à travers plusieurs CVE et applications (postgresql, keycloak, rabbitmq), indiquant des vulnérabilités communes dans cette bibliothèque.
+> - La bibliothèque **stdlib** est récurrente à travers plusieurs CVE et applications (gitlab-agent, trivy, velero, policy-reporter, kyverno, kube-prometheus-stack), indiquant des vulnérabilités communes dans cette bibliothèque.
+> - La bibliothèque **libssl3** est récurrente à travers plusieurs CVE et applications (keycloak, postgresql, trivy, rabbitmq, backend-ddf), indiquant des vulnérabilités communes dans cette bibliothèque.
+> - La bibliothèque **libgnutls30** est récurrente à travers plusieurs CVE et applications (keycloak, postgresql, rabbitmq), indiquant des vulnérabilités communes dans cette bibliothèque.
 
 ## Liste Détaillée des CVE
 ### CVE Critiques
