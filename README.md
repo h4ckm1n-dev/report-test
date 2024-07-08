@@ -34,16 +34,16 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 ### Métriques Spécifiques aux Bibliothèques
 | Bibliothèque | Applications Affectées | Total CVE |
 |--------------|-----------------------|-----------|
-| stdlib | kyverno, policy-reporter, gitlab-agent, trivy, kube-prometheus-stack, velero | 22 |
-| libssl3 | keycloak, rabbitmq, trivy, postgresql, backend-ddf | 6 |
-| libgnutls30 | keycloak, rabbitmq, postgresql | 2 |
-| libsystemd0 | keycloak, rabbitmq, postgresql | 2 |
-| libudev1 | keycloak, rabbitmq, postgresql | 2 |
-| openssl | keycloak, rabbitmq, postgresql | 4 |
-| github.com/Azure/azure-sdk-for-go/sdk/azidentity | trivy, kube-prometheus-stack, kyverno | 1 |
+| stdlib | policy-reporter, kube-prometheus-stack, velero, kyverno, gitlab-agent, trivy | 22 |
+| libssl3 | keycloak, backend-ddf, rabbitmq, postgresql, trivy | 6 |
+| libgnutls30 | rabbitmq, keycloak, postgresql | 2 |
+| libsystemd0 | rabbitmq, keycloak, postgresql | 2 |
+| libudev1 | rabbitmq, keycloak, postgresql | 2 |
+| openssl | rabbitmq, keycloak, postgresql | 4 |
+| github.com/Azure/azure-sdk-for-go/sdk/azidentity | kube-prometheus-stack, kyverno, trivy | 1 |
 | curl | rabbitmq, amazon-cloudwatch | 2 |
 | libcrypto3 | trivy, backend-ddf | 2 |
-| golang.org/x/net | velero, kyverno | 4 |
+| golang.org/x/net | kyverno, velero | 4 |
 | glibc | amazon-cloudwatch | 1 |
 | glibc-common | amazon-cloudwatch | 1 |
 | glibc-langpack-en | amazon-cloudwatch | 1 |
@@ -67,11 +67,13 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 * rabbitmq a également un nombre significatif de CVE (18).
 * trivy a également un nombre significatif de CVE (15).
 * La majorité des CVE sont classées comme étant de haute gravité (26%), avec seulement une petite fraction étant critiques (5%).
-* La bibliothèque stdlib est récurrente à travers plusieurs CVE et applications (cves, applications), indiquant des vulnérabilités communes dans cette bibliothèque.
-* La bibliothèque libssl3 est récurrente à travers plusieurs CVE et applications (cves, applications), indiquant des vulnérabilités communes dans cette bibliothèque.
-* La bibliothèque libgnutls30 est récurrente à travers plusieurs CVE et applications (cves, applications), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque stdlib est récurrente à travers plusieurs CVE et applications (applications, cves), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque libssl3 est récurrente à travers plusieurs CVE et applications (applications, cves), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque libgnutls30 est récurrente à travers plusieurs CVE et applications (applications, cves), indiquant des vulnérabilités communes dans cette bibliothèque.
 
 ## Liste Détaillée des CVE
+<details>
+<summary>Voir tous les détails des CVE</summary>
 ### CVE Critiques
 
 | CVE ID | Applications |
@@ -133,7 +135,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 | [CVE-2023-44487](#cve-2023-44487) | velero |
 | [CVE-2024-24786](#cve-2024-24786) | velero |
 ### CVE Critiques
-#### CVE-2024-24790
+<details>
+<summary>CVE-2024-24790</summary>
 **Gravité:** CRITICAL (9.8)  
 **Applications Affectées:** kube-prometheus-stack  
 **Details:**
@@ -142,7 +145,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-06-05T16:15:10Z  
 - Dernière modification: 2024-06-18T17:59:12Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24790  
-#### CVE-2024-24790
+</details>
+<details>
+<summary>CVE-2024-24790</summary>
 **Gravité:** CRITICAL (9.8)  
 **Applications Affectées:** policy-reporter  
 **Details:**
@@ -151,7 +156,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-06-05T16:15:10Z  
 - Dernière modification: 2024-06-18T17:59:12Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24790  
-#### CVE-2024-24790
+</details>
+<details>
+<summary>CVE-2024-24790</summary>
 **Gravité:** CRITICAL (9.8)  
 **Applications Affectées:** trivy  
 **Details:**
@@ -160,7 +167,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-06-05T16:15:10Z  
 - Dernière modification: 2024-06-18T17:59:12Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24790  
-#### CVE-2023-24540
+</details>
+<details>
+<summary>CVE-2023-24540</summary>
 **Gravité:** CRITICAL (9.8)  
 **Applications Affectées:** velero  
 **Details:**
@@ -169,7 +178,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-05-11T16:15:09Z  
 - Dernière modification: 2023-11-07T04:08:32Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-24540  
-#### CVE-2024-24790
+</details>
+<details>
+<summary>CVE-2024-24790</summary>
 **Gravité:** CRITICAL (9.8)  
 **Applications Affectées:** velero  
 **Details:**
@@ -178,7 +189,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-06-05T16:15:10Z  
 - Dernière modification: 2024-06-18T17:59:12Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24790  
-#### CVE-2023-24540
+</details>
+<details>
+<summary>CVE-2023-24540</summary>
 **Gravité:** CRITICAL (9.8)  
 **Applications Affectées:** velero  
 **Details:**
@@ -187,7 +200,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-05-11T16:15:09Z  
 - Dernière modification: 2023-11-07T04:08:32Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-24540  
-#### CVE-2024-24790
+</details>
+<details>
+<summary>CVE-2024-24790</summary>
 **Gravité:** CRITICAL (9.8)  
 **Applications Affectées:** velero  
 **Details:**
@@ -196,8 +211,10 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-06-05T16:15:10Z  
 - Dernière modification: 2024-06-18T17:59:12Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24790  
+</details>
 ### CVE Élevées
-#### CVE-2024-2961
+<details>
+<summary>CVE-2024-2961</summary>
 **Gravité:** HIGH (8.8)  
 **Applications Affectées:** amazon-cloudwatch  
 **Details:**
@@ -206,7 +223,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-04-17T18:15:15Z  
 - Dernière modification: 2024-07-03T01:53:40Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-2961  
-#### CVE-2024-2961
+</details>
+<details>
+<summary>CVE-2024-2961</summary>
 **Gravité:** HIGH (8.8)  
 **Applications Affectées:** amazon-cloudwatch  
 **Details:**
@@ -215,7 +234,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-04-17T18:15:15Z  
 - Dernière modification: 2024-07-03T01:53:40Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-2961  
-#### CVE-2024-2961
+</details>
+<details>
+<summary>CVE-2024-2961</summary>
 **Gravité:** HIGH (8.8)  
 **Applications Affectées:** amazon-cloudwatch  
 **Details:**
@@ -224,7 +245,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-04-17T18:15:15Z  
 - Dernière modification: 2024-07-03T01:53:40Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-2961  
-#### CVE-2024-2961
+</details>
+<details>
+<summary>CVE-2024-2961</summary>
 **Gravité:** HIGH (8.8)  
 **Applications Affectées:** amazon-cloudwatch  
 **Details:**
@@ -233,7 +256,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-04-17T18:15:15Z  
 - Dernière modification: 2024-07-03T01:53:40Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-2961  
-#### CVE-2024-2961
+</details>
+<details>
+<summary>CVE-2024-2961</summary>
 **Gravité:** HIGH (8.8)  
 **Applications Affectées:** amazon-cloudwatch  
 **Details:**
@@ -242,7 +267,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-04-17T18:15:15Z  
 - Dernière modification: 2024-07-03T01:53:40Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-2961  
-#### CVE-2023-29403
+</details>
+<details>
+<summary>CVE-2023-29403</summary>
 **Gravité:** HIGH (7.8)  
 **Applications Affectées:** velero  
 **Details:**
@@ -251,7 +278,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-06-08T21:15:16Z  
 - Dernière modification: 2023-11-25T11:15:14Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-29403  
-#### CVE-2023-29403
+</details>
+<details>
+<summary>CVE-2023-29403</summary>
 **Gravité:** HIGH (7.8)  
 **Applications Affectées:** velero  
 **Details:**
@@ -260,7 +289,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-06-08T21:15:16Z  
 - Dernière modification: 2023-11-25T11:15:14Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-29403  
-#### CVE-2024-6257
+</details>
+<details>
+<summary>CVE-2024-6257</summary>
 **Gravité:** HIGH (7.7)  
 **Applications Affectées:** trivy  
 **Details:**
@@ -269,7 +300,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-06-25T17:15:10Z  
 - Dernière modification: 2024-06-25T18:50:42Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-6257  
-#### CVE-2023-50387
+</details>
+<details>
+<summary>CVE-2023-50387</summary>
 **Gravité:** HIGH (7.5)  
 **Applications Affectées:** keycloak  
 **Details:**
@@ -278,7 +311,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-02-14T16:15:45Z  
 - Dernière modification: 2024-06-10T17:16:15Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-50387  
-#### CVE-2023-50868
+</details>
+<details>
+<summary>CVE-2023-50868</summary>
 **Gravité:** HIGH (7.5)  
 **Applications Affectées:** keycloak  
 **Details:**
@@ -287,7 +322,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-02-14T16:15:45Z  
 - Dernière modification: 2024-06-10T17:16:16Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-50868  
-#### CVE-2023-50387
+</details>
+<details>
+<summary>CVE-2023-50387</summary>
 **Gravité:** HIGH (7.5)  
 **Applications Affectées:** keycloak  
 **Details:**
@@ -296,7 +333,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-02-14T16:15:45Z  
 - Dernière modification: 2024-06-10T17:16:15Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-50387  
-#### CVE-2023-50868
+</details>
+<details>
+<summary>CVE-2023-50868</summary>
 **Gravité:** HIGH (7.5)  
 **Applications Affectées:** keycloak  
 **Details:**
@@ -305,7 +344,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-02-14T16:15:45Z  
 - Dernière modification: 2024-06-10T17:16:16Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-50868  
-#### CVE-2023-50387
+</details>
+<details>
+<summary>CVE-2023-50387</summary>
 **Gravité:** HIGH (7.5)  
 **Applications Affectées:** postgresql  
 **Details:**
@@ -314,7 +355,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-02-14T16:15:45Z  
 - Dernière modification: 2024-06-10T17:16:15Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-50387  
-#### CVE-2023-50868
+</details>
+<details>
+<summary>CVE-2023-50868</summary>
 **Gravité:** HIGH (7.5)  
 **Applications Affectées:** postgresql  
 **Details:**
@@ -323,7 +366,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-02-14T16:15:45Z  
 - Dernière modification: 2024-06-10T17:16:16Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-50868  
-#### CVE-2023-50387
+</details>
+<details>
+<summary>CVE-2023-50387</summary>
 **Gravité:** HIGH (7.5)  
 **Applications Affectées:** postgresql  
 **Details:**
@@ -332,7 +377,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-02-14T16:15:45Z  
 - Dernière modification: 2024-06-10T17:16:15Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-50387  
-#### CVE-2023-50868
+</details>
+<details>
+<summary>CVE-2023-50868</summary>
 **Gravité:** HIGH (7.5)  
 **Applications Affectées:** postgresql  
 **Details:**
@@ -341,7 +388,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-02-14T16:15:45Z  
 - Dernière modification: 2024-06-10T17:16:16Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-50868  
-#### CVE-2024-2398
+</details>
+<details>
+<summary>CVE-2024-2398</summary>
 **Gravité:** HIGH (7.5)  
 **Applications Affectées:** rabbitmq  
 **Details:**
@@ -350,7 +399,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-03-27T08:15:41Z  
 - Dernière modification: 2024-07-03T01:53:12Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-2398  
-#### CVE-2024-2398
+</details>
+<details>
+<summary>CVE-2024-2398</summary>
 **Gravité:** HIGH (7.5)  
 **Applications Affectées:** rabbitmq  
 **Details:**
@@ -359,7 +410,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-03-27T08:15:41Z  
 - Dernière modification: 2024-07-03T01:53:12Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-2398  
-#### CVE-2023-50387
+</details>
+<details>
+<summary>CVE-2023-50387</summary>
 **Gravité:** HIGH (7.5)  
 **Applications Affectées:** rabbitmq  
 **Details:**
@@ -368,7 +421,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-02-14T16:15:45Z  
 - Dernière modification: 2024-06-10T17:16:15Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-50387  
-#### CVE-2023-50868
+</details>
+<details>
+<summary>CVE-2023-50868</summary>
 **Gravité:** HIGH (7.5)  
 **Applications Affectées:** rabbitmq  
 **Details:**
@@ -377,7 +432,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-02-14T16:15:45Z  
 - Dernière modification: 2024-06-10T17:16:16Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-50868  
-#### CVE-2023-50387
+</details>
+<details>
+<summary>CVE-2023-50387</summary>
 **Gravité:** HIGH (7.5)  
 **Applications Affectées:** rabbitmq  
 **Details:**
@@ -386,7 +443,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-02-14T16:15:45Z  
 - Dernière modification: 2024-06-10T17:16:15Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-50387  
-#### CVE-2023-50868
+</details>
+<details>
+<summary>CVE-2023-50868</summary>
 **Gravité:** HIGH (7.5)  
 **Applications Affectées:** rabbitmq  
 **Details:**
@@ -395,7 +454,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-02-14T16:15:45Z  
 - Dernière modification: 2024-06-10T17:16:16Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-50868  
-#### CVE-2023-39325
+</details>
+<details>
+<summary>CVE-2023-39325</summary>
 **Gravité:** HIGH (7.5)  
 **Applications Affectées:** velero  
 **Details:**
@@ -404,7 +465,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-10-11T22:15:09Z  
 - Dernière modification: 2024-04-28T04:15:09Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-39325  
-#### CVE-2023-45283
+</details>
+<details>
+<summary>CVE-2023-45283</summary>
 **Gravité:** HIGH (7.5)  
 **Applications Affectées:** velero  
 **Details:**
@@ -413,7 +476,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-11-09T17:15:08Z  
 - Dernière modification: 2023-12-14T10:15:07Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45283  
-#### CVE-2023-45287
+</details>
+<details>
+<summary>CVE-2023-45287</summary>
 **Gravité:** HIGH (7.5)  
 **Applications Affectées:** velero  
 **Details:**
@@ -422,7 +487,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-12-05T17:15:08Z  
 - Dernière modification: 2024-01-12T14:15:48Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45287  
-#### CVE-2023-45288
+</details>
+<details>
+<summary>CVE-2023-45288</summary>
 **Gravité:** HIGH (7.5)  
 **Applications Affectées:** velero  
 **Details:**
@@ -431,7 +498,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-04-04T21:15:16Z  
 - Dernière modification: 2024-05-01T18:15:10Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45288  
-#### CVE-2023-39325
+</details>
+<details>
+<summary>CVE-2023-39325</summary>
 **Gravité:** HIGH (7.5)  
 **Applications Affectées:** velero  
 **Details:**
@@ -440,7 +509,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-10-11T22:15:09Z  
 - Dernière modification: 2024-04-28T04:15:09Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-39325  
-#### GHSA-m425-mq94-257g
+</details>
+<details>
+<summary>GHSA-m425-mq94-257g</summary>
 **Gravité:** HIGH (7.5)  
 **Applications Affectées:** velero  
 **Details:**
@@ -449,7 +520,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication:   
 - Dernière modification:   
 - Lien primaire: https://github.com/advisories/GHSA-m425-mq94-257g  
-#### CVE-2023-39325
+</details>
+<details>
+<summary>CVE-2023-39325</summary>
 **Gravité:** HIGH (7.5)  
 **Applications Affectées:** velero  
 **Details:**
@@ -458,7 +531,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-10-11T22:15:09Z  
 - Dernière modification: 2024-04-28T04:15:09Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-39325  
-#### CVE-2023-45283
+</details>
+<details>
+<summary>CVE-2023-45283</summary>
 **Gravité:** HIGH (7.5)  
 **Applications Affectées:** velero  
 **Details:**
@@ -467,7 +542,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-11-09T17:15:08Z  
 - Dernière modification: 2023-12-14T10:15:07Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45283  
-#### CVE-2023-45287
+</details>
+<details>
+<summary>CVE-2023-45287</summary>
 **Gravité:** HIGH (7.5)  
 **Applications Affectées:** velero  
 **Details:**
@@ -476,7 +553,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-12-05T17:15:08Z  
 - Dernière modification: 2024-01-12T14:15:48Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45287  
-#### CVE-2023-45288
+</details>
+<details>
+<summary>CVE-2023-45288</summary>
 **Gravité:** HIGH (7.5)  
 **Applications Affectées:** velero  
 **Details:**
@@ -485,7 +564,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-04-04T21:15:16Z  
 - Dernière modification: 2024-05-01T18:15:10Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45288  
-#### CVE-2023-24539
+</details>
+<details>
+<summary>CVE-2023-24539</summary>
 **Gravité:** HIGH (7.3)  
 **Applications Affectées:** velero  
 **Details:**
@@ -494,7 +575,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-05-11T16:15:09Z  
 - Dernière modification: 2023-11-07T04:08:32Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-24539  
-#### CVE-2023-29400
+</details>
+<details>
+<summary>CVE-2023-29400</summary>
 **Gravité:** HIGH (7.3)  
 **Applications Affectées:** velero  
 **Details:**
@@ -503,7 +586,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-05-11T16:15:09Z  
 - Dernière modification: 2023-11-07T04:11:10Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-29400  
-#### CVE-2023-24539
+</details>
+<details>
+<summary>CVE-2023-24539</summary>
 **Gravité:** HIGH (7.3)  
 **Applications Affectées:** velero  
 **Details:**
@@ -512,7 +597,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-05-11T16:15:09Z  
 - Dernière modification: 2023-11-07T04:08:32Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-24539  
-#### CVE-2023-29400
+</details>
+<details>
+<summary>CVE-2023-29400</summary>
 **Gravité:** HIGH (7.3)  
 **Applications Affectées:** velero  
 **Details:**
@@ -521,7 +608,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-05-11T16:15:09Z  
 - Dernière modification: 2023-11-07T04:11:10Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-29400  
-#### CVE-2024-28182
+</details>
+<details>
+<summary>CVE-2024-28182</summary>
 **Gravité:** HIGH (5.3)  
 **Applications Affectées:** amazon-cloudwatch  
 **Details:**
@@ -530,8 +619,10 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-04-04T15:15:38Z  
 - Dernière modification: 2024-05-01T18:15:17Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-28182  
+</details>
 ### CVE Moyennes
-#### CVE-2024-2004
+<details>
+<summary>CVE-2024-2004</summary>
 **Gravité:** MEDIUM (5.3)  
 **Applications Affectées:** amazon-cloudwatch  
 **Details:**
@@ -540,7 +631,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-03-27T08:15:41Z  
 - Dernière modification: 2024-07-03T01:52:57Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-2004  
-#### CVE-2024-2398
+</details>
+<details>
+<summary>CVE-2024-2398</summary>
 **Gravité:** MEDIUM (7.5)  
 **Applications Affectées:** amazon-cloudwatch  
 **Details:**
@@ -549,7 +642,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-03-27T08:15:41Z  
 - Dernière modification: 2024-07-03T01:53:12Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-2398  
-#### CVE-2024-2004
+</details>
+<details>
+<summary>CVE-2024-2004</summary>
 **Gravité:** MEDIUM (5.3)  
 **Applications Affectées:** amazon-cloudwatch  
 **Details:**
@@ -558,7 +653,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-03-27T08:15:41Z  
 - Dernière modification: 2024-07-03T01:52:57Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-2004  
-#### CVE-2024-2398
+</details>
+<details>
+<summary>CVE-2024-2398</summary>
 **Gravité:** MEDIUM (7.5)  
 **Applications Affectées:** amazon-cloudwatch  
 **Details:**
@@ -567,7 +664,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-03-27T08:15:41Z  
 - Dernière modification: 2024-07-03T01:53:12Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-2398  
-#### CVE-2024-2511
+</details>
+<details>
+<summary>CVE-2024-2511</summary>
 **Gravité:** MEDIUM (3.7)  
 **Applications Affectées:** amazon-cloudwatch  
 **Details:**
@@ -576,7 +675,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-04-08T14:15:07Z  
 - Dernière modification: 2024-05-03T13:15:21Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-2511  
-#### CVE-2024-2511
+</details>
+<details>
+<summary>CVE-2024-2511</summary>
 **Gravité:** MEDIUM (3.7)  
 **Applications Affectées:** amazon-cloudwatch  
 **Details:**
@@ -585,7 +686,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-04-08T14:15:07Z  
 - Dernière modification: 2024-05-03T13:15:21Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-2511  
-#### CVE-2024-4741
+</details>
+<details>
+<summary>CVE-2024-4741</summary>
 **Gravité:** MEDIUM (5.6)  
 **Applications Affectées:** backend-ddf  
 **Details:**
@@ -594,7 +697,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication:   
 - Dernière modification:   
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-4741  
-#### CVE-2024-5535
+</details>
+<details>
+<summary>CVE-2024-5535</summary>
 **Gravité:** MEDIUM (5.9)  
 **Applications Affectées:** backend-ddf  
 **Details:**
@@ -603,7 +708,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-06-27T11:15:24Z  
 - Dernière modification: 2024-07-03T02:09:04Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-5535  
-#### CVE-2024-4741
+</details>
+<details>
+<summary>CVE-2024-4741</summary>
 **Gravité:** MEDIUM (5.6)  
 **Applications Affectées:** backend-ddf  
 **Details:**
@@ -612,7 +719,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication:   
 - Dernière modification:   
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-4741  
-#### CVE-2024-5535
+</details>
+<details>
+<summary>CVE-2024-5535</summary>
 **Gravité:** MEDIUM (5.9)  
 **Applications Affectées:** backend-ddf  
 **Details:**
@@ -621,7 +730,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-06-27T11:15:24Z  
 - Dernière modification: 2024-07-03T02:09:04Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-5535  
-#### CVE-2024-24791
+</details>
+<details>
+<summary>CVE-2024-24791</summary>
 **Gravité:** MEDIUM (N/A)  
 **Applications Affectées:** gitlab-agent  
 **Details:**
@@ -630,7 +741,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-07-02T22:15:04Z  
 - Dernière modification: 2024-07-03T12:53:24Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24791  
-#### CVE-2024-28834
+</details>
+<details>
+<summary>CVE-2024-28834</summary>
 **Gravité:** MEDIUM (5.3)  
 **Applications Affectées:** keycloak  
 **Details:**
@@ -639,7 +752,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-03-21T14:15:07Z  
 - Dernière modification: 2024-06-10T17:16:24Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-28834  
-#### CVE-2024-28835
+</details>
+<details>
+<summary>CVE-2024-28835</summary>
 **Gravité:** MEDIUM (5)  
 **Applications Affectées:** keycloak  
 **Details:**
@@ -648,7 +763,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-03-21T06:15:45Z  
 - Dernière modification: 2024-05-16T23:15:47Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-28835  
-#### CVE-2023-5678
+</details>
+<details>
+<summary>CVE-2023-5678</summary>
 **Gravité:** MEDIUM (5.3)  
 **Applications Affectées:** keycloak  
 **Details:**
@@ -657,7 +774,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-11-06T16:15:42Z  
 - Dernière modification: 2024-05-01T18:15:12Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-5678  
-#### CVE-2023-6129
+</details>
+<details>
+<summary>CVE-2023-6129</summary>
 **Gravité:** MEDIUM (6.5)  
 **Applications Affectées:** keycloak  
 **Details:**
@@ -666,7 +785,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-01-09T17:15:12Z  
 - Dernière modification: 2024-05-03T13:15:21Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-6129  
-#### CVE-2023-6237
+</details>
+<details>
+<summary>CVE-2023-6237</summary>
 **Gravité:** MEDIUM (5.9)  
 **Applications Affectées:** keycloak  
 **Details:**
@@ -675,7 +796,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-04-25T07:15:45Z  
 - Dernière modification: 2024-06-10T17:16:16Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-6237  
-#### CVE-2024-0727
+</details>
+<details>
+<summary>CVE-2024-0727</summary>
 **Gravité:** MEDIUM (5.5)  
 **Applications Affectées:** keycloak  
 **Details:**
@@ -684,7 +807,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-01-26T09:15:07Z  
 - Dernière modification: 2024-05-01T18:15:13Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-0727  
-#### CVE-2023-5678
+</details>
+<details>
+<summary>CVE-2023-5678</summary>
 **Gravité:** MEDIUM (5.3)  
 **Applications Affectées:** keycloak  
 **Details:**
@@ -693,7 +818,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-11-06T16:15:42Z  
 - Dernière modification: 2024-05-01T18:15:12Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-5678  
-#### CVE-2023-6129
+</details>
+<details>
+<summary>CVE-2023-6129</summary>
 **Gravité:** MEDIUM (6.5)  
 **Applications Affectées:** keycloak  
 **Details:**
@@ -702,7 +829,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-01-09T17:15:12Z  
 - Dernière modification: 2024-05-03T13:15:21Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-6129  
-#### CVE-2023-6237
+</details>
+<details>
+<summary>CVE-2023-6237</summary>
 **Gravité:** MEDIUM (5.9)  
 **Applications Affectées:** keycloak  
 **Details:**
@@ -711,7 +840,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-04-25T07:15:45Z  
 - Dernière modification: 2024-06-10T17:16:16Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-6237  
-#### CVE-2024-0727
+</details>
+<details>
+<summary>CVE-2024-0727</summary>
 **Gravité:** MEDIUM (5.5)  
 **Applications Affectées:** keycloak  
 **Details:**
@@ -720,7 +851,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-01-26T09:15:07Z  
 - Dernière modification: 2024-05-01T18:15:13Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-0727  
-#### CVE-2024-35255
+</details>
+<details>
+<summary>CVE-2024-35255</summary>
 **Gravité:** MEDIUM (5.5)  
 **Applications Affectées:** kube-prometheus-stack  
 **Details:**
@@ -729,7 +862,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-06-11T17:16:03Z  
 - Dernière modification: 2024-06-20T16:31:46Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-35255  
-#### CVE-2024-24789
+</details>
+<details>
+<summary>CVE-2024-24789</summary>
 **Gravité:** MEDIUM (5.5)  
 **Applications Affectées:** kube-prometheus-stack  
 **Details:**
@@ -738,7 +873,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-06-05T16:15:10Z  
 - Dernière modification: 2024-07-03T01:48:25Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24789  
-#### CVE-2024-24791
+</details>
+<details>
+<summary>CVE-2024-24791</summary>
 **Gravité:** MEDIUM (N/A)  
 **Applications Affectées:** kube-prometheus-stack  
 **Details:**
@@ -747,7 +884,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-07-02T22:15:04Z  
 - Dernière modification: 2024-07-03T12:53:24Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24791  
-#### CVE-2024-35255
+</details>
+<details>
+<summary>CVE-2024-35255</summary>
 **Gravité:** MEDIUM (5.5)  
 **Applications Affectées:** kyverno  
 **Details:**
@@ -756,7 +895,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-06-11T17:16:03Z  
 - Dernière modification: 2024-06-20T16:31:46Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-35255  
-#### CVE-2024-6104
+</details>
+<details>
+<summary>CVE-2024-6104</summary>
 **Gravité:** MEDIUM (5.5)  
 **Applications Affectées:** kyverno  
 **Details:**
@@ -765,7 +906,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-06-24T17:15:11Z  
 - Dernière modification: 2024-06-26T17:19:40Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-6104  
-#### CVE-2023-45288
+</details>
+<details>
+<summary>CVE-2023-45288</summary>
 **Gravité:** MEDIUM (7.5)  
 **Applications Affectées:** kyverno  
 **Details:**
@@ -774,7 +917,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-04-04T21:15:16Z  
 - Dernière modification: 2024-05-01T18:15:10Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45288  
-#### CVE-2024-24791
+</details>
+<details>
+<summary>CVE-2024-24791</summary>
 **Gravité:** MEDIUM (N/A)  
 **Applications Affectées:** kyverno  
 **Details:**
@@ -783,7 +928,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-07-02T22:15:04Z  
 - Dernière modification: 2024-07-03T12:53:24Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24791  
-#### CVE-2024-24789
+</details>
+<details>
+<summary>CVE-2024-24789</summary>
 **Gravité:** MEDIUM (5.5)  
 **Applications Affectées:** policy-reporter  
 **Details:**
@@ -792,7 +939,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-06-05T16:15:10Z  
 - Dernière modification: 2024-07-03T01:48:25Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24789  
-#### CVE-2024-24791
+</details>
+<details>
+<summary>CVE-2024-24791</summary>
 **Gravité:** MEDIUM (N/A)  
 **Applications Affectées:** policy-reporter  
 **Details:**
@@ -801,7 +950,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-07-02T22:15:04Z  
 - Dernière modification: 2024-07-03T12:53:24Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24791  
-#### CVE-2024-28834
+</details>
+<details>
+<summary>CVE-2024-28834</summary>
 **Gravité:** MEDIUM (5.3)  
 **Applications Affectées:** postgresql  
 **Details:**
@@ -810,7 +961,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-03-21T14:15:07Z  
 - Dernière modification: 2024-06-10T17:16:24Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-28834  
-#### CVE-2024-28835
+</details>
+<details>
+<summary>CVE-2024-28835</summary>
 **Gravité:** MEDIUM (5)  
 **Applications Affectées:** postgresql  
 **Details:**
@@ -819,7 +972,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-03-21T06:15:45Z  
 - Dernière modification: 2024-05-16T23:15:47Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-28835  
-#### CVE-2023-5678
+</details>
+<details>
+<summary>CVE-2023-5678</summary>
 **Gravité:** MEDIUM (5.3)  
 **Applications Affectées:** postgresql  
 **Details:**
@@ -828,7 +983,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-11-06T16:15:42Z  
 - Dernière modification: 2024-05-01T18:15:12Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-5678  
-#### CVE-2023-6129
+</details>
+<details>
+<summary>CVE-2023-6129</summary>
 **Gravité:** MEDIUM (6.5)  
 **Applications Affectées:** postgresql  
 **Details:**
@@ -837,7 +994,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-01-09T17:15:12Z  
 - Dernière modification: 2024-05-03T13:15:21Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-6129  
-#### CVE-2023-6237
+</details>
+<details>
+<summary>CVE-2023-6237</summary>
 **Gravité:** MEDIUM (5.9)  
 **Applications Affectées:** postgresql  
 **Details:**
@@ -846,7 +1005,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-04-25T07:15:45Z  
 - Dernière modification: 2024-06-10T17:16:16Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-6237  
-#### CVE-2024-0727
+</details>
+<details>
+<summary>CVE-2024-0727</summary>
 **Gravité:** MEDIUM (5.5)  
 **Applications Affectées:** postgresql  
 **Details:**
@@ -855,7 +1016,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-01-26T09:15:07Z  
 - Dernière modification: 2024-05-01T18:15:13Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-0727  
-#### CVE-2023-5678
+</details>
+<details>
+<summary>CVE-2023-5678</summary>
 **Gravité:** MEDIUM (5.3)  
 **Applications Affectées:** postgresql  
 **Details:**
@@ -864,7 +1027,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-11-06T16:15:42Z  
 - Dernière modification: 2024-05-01T18:15:12Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-5678  
-#### CVE-2023-6129
+</details>
+<details>
+<summary>CVE-2023-6129</summary>
 **Gravité:** MEDIUM (6.5)  
 **Applications Affectées:** postgresql  
 **Details:**
@@ -873,7 +1038,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-01-09T17:15:12Z  
 - Dernière modification: 2024-05-03T13:15:21Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-6129  
-#### CVE-2023-6237
+</details>
+<details>
+<summary>CVE-2023-6237</summary>
 **Gravité:** MEDIUM (5.9)  
 **Applications Affectées:** postgresql  
 **Details:**
@@ -882,7 +1049,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-04-25T07:15:45Z  
 - Dernière modification: 2024-06-10T17:16:16Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-6237  
-#### CVE-2024-0727
+</details>
+<details>
+<summary>CVE-2024-0727</summary>
 **Gravité:** MEDIUM (5.5)  
 **Applications Affectées:** postgresql  
 **Details:**
@@ -891,7 +1060,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-01-26T09:15:07Z  
 - Dernière modification: 2024-05-01T18:15:13Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-0727  
-#### CVE-2024-2004
+</details>
+<details>
+<summary>CVE-2024-2004</summary>
 **Gravité:** MEDIUM (5.3)  
 **Applications Affectées:** rabbitmq  
 **Details:**
@@ -900,7 +1071,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-03-27T08:15:41Z  
 - Dernière modification: 2024-07-03T01:52:57Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-2004  
-#### CVE-2024-2004
+</details>
+<details>
+<summary>CVE-2024-2004</summary>
 **Gravité:** MEDIUM (5.3)  
 **Applications Affectées:** rabbitmq  
 **Details:**
@@ -909,7 +1082,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-03-27T08:15:41Z  
 - Dernière modification: 2024-07-03T01:52:57Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-2004  
-#### CVE-2024-28834
+</details>
+<details>
+<summary>CVE-2024-28834</summary>
 **Gravité:** MEDIUM (5.3)  
 **Applications Affectées:** rabbitmq  
 **Details:**
@@ -918,7 +1093,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-03-21T14:15:07Z  
 - Dernière modification: 2024-06-10T17:16:24Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-28834  
-#### CVE-2024-28835
+</details>
+<details>
+<summary>CVE-2024-28835</summary>
 **Gravité:** MEDIUM (5)  
 **Applications Affectées:** rabbitmq  
 **Details:**
@@ -927,7 +1104,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-03-21T06:15:45Z  
 - Dernière modification: 2024-05-16T23:15:47Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-28835  
-#### CVE-2023-5678
+</details>
+<details>
+<summary>CVE-2023-5678</summary>
 **Gravité:** MEDIUM (5.3)  
 **Applications Affectées:** rabbitmq  
 **Details:**
@@ -936,7 +1115,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-11-06T16:15:42Z  
 - Dernière modification: 2024-05-01T18:15:12Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-5678  
-#### CVE-2023-6129
+</details>
+<details>
+<summary>CVE-2023-6129</summary>
 **Gravité:** MEDIUM (6.5)  
 **Applications Affectées:** rabbitmq  
 **Details:**
@@ -945,7 +1126,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-01-09T17:15:12Z  
 - Dernière modification: 2024-05-03T13:15:21Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-6129  
-#### CVE-2023-6237
+</details>
+<details>
+<summary>CVE-2023-6237</summary>
 **Gravité:** MEDIUM (5.9)  
 **Applications Affectées:** rabbitmq  
 **Details:**
@@ -954,7 +1137,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-04-25T07:15:45Z  
 - Dernière modification: 2024-06-10T17:16:16Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-6237  
-#### CVE-2024-0727
+</details>
+<details>
+<summary>CVE-2024-0727</summary>
 **Gravité:** MEDIUM (5.5)  
 **Applications Affectées:** rabbitmq  
 **Details:**
@@ -963,7 +1148,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-01-26T09:15:07Z  
 - Dernière modification: 2024-05-01T18:15:13Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-0727  
-#### CVE-2023-5678
+</details>
+<details>
+<summary>CVE-2023-5678</summary>
 **Gravité:** MEDIUM (5.3)  
 **Applications Affectées:** rabbitmq  
 **Details:**
@@ -972,7 +1159,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-11-06T16:15:42Z  
 - Dernière modification: 2024-05-01T18:15:12Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-5678  
-#### CVE-2023-6129
+</details>
+<details>
+<summary>CVE-2023-6129</summary>
 **Gravité:** MEDIUM (6.5)  
 **Applications Affectées:** rabbitmq  
 **Details:**
@@ -981,7 +1170,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-01-09T17:15:12Z  
 - Dernière modification: 2024-05-03T13:15:21Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-6129  
-#### CVE-2023-6237
+</details>
+<details>
+<summary>CVE-2023-6237</summary>
 **Gravité:** MEDIUM (5.9)  
 **Applications Affectées:** rabbitmq  
 **Details:**
@@ -990,7 +1181,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-04-25T07:15:45Z  
 - Dernière modification: 2024-06-10T17:16:16Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-6237  
-#### CVE-2024-0727
+</details>
+<details>
+<summary>CVE-2024-0727</summary>
 **Gravité:** MEDIUM (5.5)  
 **Applications Affectées:** rabbitmq  
 **Details:**
@@ -999,7 +1192,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-01-26T09:15:07Z  
 - Dernière modification: 2024-05-01T18:15:13Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-0727  
-#### CVE-2023-42364
+</details>
+<details>
+<summary>CVE-2023-42364</summary>
 **Gravité:** MEDIUM (5.5)  
 **Applications Affectées:** trivy  
 **Details:**
@@ -1008,7 +1203,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-11-27T23:15:07Z  
 - Dernière modification: 2023-11-30T05:07:10Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-42364  
-#### CVE-2023-42365
+</details>
+<details>
+<summary>CVE-2023-42365</summary>
 **Gravité:** MEDIUM (5.5)  
 **Applications Affectées:** trivy  
 **Details:**
@@ -1017,7 +1214,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-11-27T23:15:07Z  
 - Dernière modification: 2023-11-30T05:08:08Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-42365  
-#### CVE-2023-42364
+</details>
+<details>
+<summary>CVE-2023-42364</summary>
 **Gravité:** MEDIUM (5.5)  
 **Applications Affectées:** trivy  
 **Details:**
@@ -1026,7 +1225,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-11-27T23:15:07Z  
 - Dernière modification: 2023-11-30T05:07:10Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-42364  
-#### CVE-2023-42365
+</details>
+<details>
+<summary>CVE-2023-42365</summary>
 **Gravité:** MEDIUM (5.5)  
 **Applications Affectées:** trivy  
 **Details:**
@@ -1035,7 +1236,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-11-27T23:15:07Z  
 - Dernière modification: 2023-11-30T05:08:08Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-42365  
-#### CVE-2024-4741
+</details>
+<details>
+<summary>CVE-2024-4741</summary>
 **Gravité:** MEDIUM (5.6)  
 **Applications Affectées:** trivy  
 **Details:**
@@ -1044,7 +1247,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication:   
 - Dernière modification:   
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-4741  
-#### CVE-2024-5535
+</details>
+<details>
+<summary>CVE-2024-5535</summary>
 **Gravité:** MEDIUM (5.9)  
 **Applications Affectées:** trivy  
 **Details:**
@@ -1053,7 +1258,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-06-27T11:15:24Z  
 - Dernière modification: 2024-07-03T02:09:04Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-5535  
-#### CVE-2024-4741
+</details>
+<details>
+<summary>CVE-2024-4741</summary>
 **Gravité:** MEDIUM (5.6)  
 **Applications Affectées:** trivy  
 **Details:**
@@ -1062,7 +1269,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication:   
 - Dernière modification:   
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-4741  
-#### CVE-2024-5535
+</details>
+<details>
+<summary>CVE-2024-5535</summary>
 **Gravité:** MEDIUM (5.9)  
 **Applications Affectées:** trivy  
 **Details:**
@@ -1071,7 +1280,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-06-27T11:15:24Z  
 - Dernière modification: 2024-07-03T02:09:04Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-5535  
-#### CVE-2023-42364
+</details>
+<details>
+<summary>CVE-2023-42364</summary>
 **Gravité:** MEDIUM (5.5)  
 **Applications Affectées:** trivy  
 **Details:**
@@ -1080,7 +1291,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-11-27T23:15:07Z  
 - Dernière modification: 2023-11-30T05:07:10Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-42364  
-#### CVE-2023-42365
+</details>
+<details>
+<summary>CVE-2023-42365</summary>
 **Gravité:** MEDIUM (5.5)  
 **Applications Affectées:** trivy  
 **Details:**
@@ -1089,7 +1302,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-11-27T23:15:07Z  
 - Dernière modification: 2023-11-30T05:08:08Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-42365  
-#### CVE-2024-35255
+</details>
+<details>
+<summary>CVE-2024-35255</summary>
 **Gravité:** MEDIUM (5.5)  
 **Applications Affectées:** trivy  
 **Details:**
@@ -1098,7 +1313,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-06-11T17:16:03Z  
 - Dernière modification: 2024-06-20T16:31:46Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-35255  
-#### CVE-2024-24789
+</details>
+<details>
+<summary>CVE-2024-24789</summary>
 **Gravité:** MEDIUM (5.5)  
 **Applications Affectées:** trivy  
 **Details:**
@@ -1107,7 +1324,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-06-05T16:15:10Z  
 - Dernière modification: 2024-07-03T01:48:25Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24789  
-#### CVE-2024-24791
+</details>
+<details>
+<summary>CVE-2024-24791</summary>
 **Gravité:** MEDIUM (N/A)  
 **Applications Affectées:** trivy  
 **Details:**
@@ -1116,7 +1335,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-07-02T22:15:04Z  
 - Dernière modification: 2024-07-03T12:53:24Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24791  
-#### CVE-2023-29406
+</details>
+<details>
+<summary>CVE-2023-29406</summary>
 **Gravité:** MEDIUM (6.5)  
 **Applications Affectées:** velero  
 **Details:**
@@ -1125,7 +1346,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-07-11T20:15:10Z  
 - Dernière modification: 2023-11-25T11:15:14Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-29406  
-#### CVE-2023-29409
+</details>
+<details>
+<summary>CVE-2023-29409</summary>
 **Gravité:** MEDIUM (5.3)  
 **Applications Affectées:** velero  
 **Details:**
@@ -1134,7 +1357,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-08-02T20:15:11Z  
 - Dernière modification: 2023-11-25T11:15:14Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-29409  
-#### CVE-2023-39318
+</details>
+<details>
+<summary>CVE-2023-39318</summary>
 **Gravité:** MEDIUM (6.1)  
 **Applications Affectées:** velero  
 **Details:**
@@ -1143,7 +1368,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-09-08T17:15:27Z  
 - Dernière modification: 2023-11-25T11:15:17Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-39318  
-#### CVE-2023-39319
+</details>
+<details>
+<summary>CVE-2023-39319</summary>
 **Gravité:** MEDIUM (6.1)  
 **Applications Affectées:** velero  
 **Details:**
@@ -1152,7 +1379,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-09-08T17:15:27Z  
 - Dernière modification: 2023-11-25T11:15:17Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-39319  
-#### CVE-2023-39326
+</details>
+<details>
+<summary>CVE-2023-39326</summary>
 **Gravité:** MEDIUM (5.3)  
 **Applications Affectées:** velero  
 **Details:**
@@ -1161,7 +1390,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-12-06T17:15:07Z  
 - Dernière modification: 2024-01-20T04:15:07Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-39326  
-#### CVE-2023-45284
+</details>
+<details>
+<summary>CVE-2023-45284</summary>
 **Gravité:** MEDIUM (5.3)  
 **Applications Affectées:** velero  
 **Details:**
@@ -1170,7 +1401,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-11-09T17:15:08Z  
 - Dernière modification: 2023-11-17T16:39:27Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45284  
-#### CVE-2023-45289
+</details>
+<details>
+<summary>CVE-2023-45289</summary>
 **Gravité:** MEDIUM (5.3)  
 **Applications Affectées:** velero  
 **Details:**
@@ -1179,7 +1412,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-03-05T23:15:07Z  
 - Dernière modification: 2024-05-01T17:15:25Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45289  
-#### CVE-2023-45290
+</details>
+<details>
+<summary>CVE-2023-45290</summary>
 **Gravité:** MEDIUM (5.3)  
 **Applications Affectées:** velero  
 **Details:**
@@ -1188,7 +1423,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-03-05T23:15:07Z  
 - Dernière modification: 2024-05-01T17:15:26Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45290  
-#### CVE-2024-24783
+</details>
+<details>
+<summary>CVE-2024-24783</summary>
 **Gravité:** MEDIUM (5.9)  
 **Applications Affectées:** velero  
 **Details:**
@@ -1197,7 +1434,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-03-05T23:15:07Z  
 - Dernière modification: 2024-05-01T17:15:29Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24783  
-#### CVE-2024-24784
+</details>
+<details>
+<summary>CVE-2024-24784</summary>
 **Gravité:** MEDIUM (5.4)  
 **Applications Affectées:** velero  
 **Details:**
@@ -1206,7 +1445,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-03-05T23:15:07Z  
 - Dernière modification: 2024-05-01T17:15:29Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24784  
-#### CVE-2024-24785
+</details>
+<details>
+<summary>CVE-2024-24785</summary>
 **Gravité:** MEDIUM (6.5)  
 **Applications Affectées:** velero  
 **Details:**
@@ -1215,7 +1456,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-03-05T23:15:07Z  
 - Dernière modification: 2024-05-01T17:15:29Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24785  
-#### CVE-2024-24789
+</details>
+<details>
+<summary>CVE-2024-24789</summary>
 **Gravité:** MEDIUM (5.5)  
 **Applications Affectées:** velero  
 **Details:**
@@ -1224,7 +1467,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-06-05T16:15:10Z  
 - Dernière modification: 2024-07-03T01:48:25Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24789  
-#### CVE-2024-24791
+</details>
+<details>
+<summary>CVE-2024-24791</summary>
 **Gravité:** MEDIUM (N/A)  
 **Applications Affectées:** velero  
 **Details:**
@@ -1233,7 +1478,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-07-02T22:15:04Z  
 - Dernière modification: 2024-07-03T12:53:24Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24791  
-#### CVE-2023-3978
+</details>
+<details>
+<summary>CVE-2023-3978</summary>
 **Gravité:** MEDIUM (6.1)  
 **Applications Affectées:** velero  
 **Details:**
@@ -1242,7 +1489,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-08-02T20:15:12Z  
 - Dernière modification: 2023-11-07T04:20:03Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-3978  
-#### CVE-2023-44487
+</details>
+<details>
+<summary>CVE-2023-44487</summary>
 **Gravité:** MEDIUM (7.5)  
 **Applications Affectées:** velero  
 **Details:**
@@ -1251,7 +1500,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-10-10T14:15:10Z  
 - Dernière modification: 2024-06-27T18:34:22Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-44487  
-#### CVE-2023-45288
+</details>
+<details>
+<summary>CVE-2023-45288</summary>
 **Gravité:** MEDIUM (5.3)  
 **Applications Affectées:** velero  
 **Details:**
@@ -1260,7 +1511,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-04-04T21:15:16Z  
 - Dernière modification: 2024-05-01T18:15:10Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45288  
-#### CVE-2023-44487
+</details>
+<details>
+<summary>CVE-2023-44487</summary>
 **Gravité:** MEDIUM (7.5)  
 **Applications Affectées:** velero  
 **Details:**
@@ -1269,7 +1522,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-10-10T14:15:10Z  
 - Dernière modification: 2024-06-27T18:34:22Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-44487  
-#### CVE-2024-24786
+</details>
+<details>
+<summary>CVE-2024-24786</summary>
 **Gravité:** MEDIUM (5.9)  
 **Applications Affectées:** velero  
 **Details:**
@@ -1278,7 +1533,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-03-05T23:15:07Z  
 - Dernière modification: 2024-06-10T18:15:26Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24786  
-#### CVE-2023-29406
+</details>
+<details>
+<summary>CVE-2023-29406</summary>
 **Gravité:** MEDIUM (6.5)  
 **Applications Affectées:** velero  
 **Details:**
@@ -1287,7 +1544,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-07-11T20:15:10Z  
 - Dernière modification: 2023-11-25T11:15:14Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-29406  
-#### CVE-2023-29409
+</details>
+<details>
+<summary>CVE-2023-29409</summary>
 **Gravité:** MEDIUM (5.3)  
 **Applications Affectées:** velero  
 **Details:**
@@ -1296,7 +1555,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-08-02T20:15:11Z  
 - Dernière modification: 2023-11-25T11:15:14Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-29409  
-#### CVE-2023-39318
+</details>
+<details>
+<summary>CVE-2023-39318</summary>
 **Gravité:** MEDIUM (6.1)  
 **Applications Affectées:** velero  
 **Details:**
@@ -1305,7 +1566,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-09-08T17:15:27Z  
 - Dernière modification: 2023-11-25T11:15:17Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-39318  
-#### CVE-2023-39319
+</details>
+<details>
+<summary>CVE-2023-39319</summary>
 **Gravité:** MEDIUM (6.1)  
 **Applications Affectées:** velero  
 **Details:**
@@ -1314,7 +1577,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-09-08T17:15:27Z  
 - Dernière modification: 2023-11-25T11:15:17Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-39319  
-#### CVE-2023-39326
+</details>
+<details>
+<summary>CVE-2023-39326</summary>
 **Gravité:** MEDIUM (5.3)  
 **Applications Affectées:** velero  
 **Details:**
@@ -1323,7 +1588,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-12-06T17:15:07Z  
 - Dernière modification: 2024-01-20T04:15:07Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-39326  
-#### CVE-2023-45284
+</details>
+<details>
+<summary>CVE-2023-45284</summary>
 **Gravité:** MEDIUM (5.3)  
 **Applications Affectées:** velero  
 **Details:**
@@ -1332,7 +1599,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2023-11-09T17:15:08Z  
 - Dernière modification: 2023-11-17T16:39:27Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45284  
-#### CVE-2023-45289
+</details>
+<details>
+<summary>CVE-2023-45289</summary>
 **Gravité:** MEDIUM (5.3)  
 **Applications Affectées:** velero  
 **Details:**
@@ -1341,7 +1610,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-03-05T23:15:07Z  
 - Dernière modification: 2024-05-01T17:15:25Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45289  
-#### CVE-2023-45290
+</details>
+<details>
+<summary>CVE-2023-45290</summary>
 **Gravité:** MEDIUM (5.3)  
 **Applications Affectées:** velero  
 **Details:**
@@ -1350,7 +1621,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-03-05T23:15:07Z  
 - Dernière modification: 2024-05-01T17:15:26Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45290  
-#### CVE-2024-24783
+</details>
+<details>
+<summary>CVE-2024-24783</summary>
 **Gravité:** MEDIUM (5.9)  
 **Applications Affectées:** velero  
 **Details:**
@@ -1359,7 +1632,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-03-05T23:15:07Z  
 - Dernière modification: 2024-05-01T17:15:29Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24783  
-#### CVE-2024-24784
+</details>
+<details>
+<summary>CVE-2024-24784</summary>
 **Gravité:** MEDIUM (5.4)  
 **Applications Affectées:** velero  
 **Details:**
@@ -1368,7 +1643,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-03-05T23:15:07Z  
 - Dernière modification: 2024-05-01T17:15:29Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24784  
-#### CVE-2024-24785
+</details>
+<details>
+<summary>CVE-2024-24785</summary>
 **Gravité:** MEDIUM (6.5)  
 **Applications Affectées:** velero  
 **Details:**
@@ -1377,7 +1654,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-03-05T23:15:07Z  
 - Dernière modification: 2024-05-01T17:15:29Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24785  
-#### CVE-2024-24789
+</details>
+<details>
+<summary>CVE-2024-24789</summary>
 **Gravité:** MEDIUM (5.5)  
 **Applications Affectées:** velero  
 **Details:**
@@ -1386,7 +1665,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-06-05T16:15:10Z  
 - Dernière modification: 2024-07-03T01:48:25Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24789  
-#### CVE-2024-24791
+</details>
+<details>
+<summary>CVE-2024-24791</summary>
 **Gravité:** MEDIUM (N/A)  
 **Applications Affectées:** velero  
 **Details:**
@@ -1395,3 +1676,5 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-07-02T22:15:04Z  
 - Dernière modification: 2024-07-03T12:53:24Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24791  
+</details>
+</details>
