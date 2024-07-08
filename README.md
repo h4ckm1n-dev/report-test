@@ -35,16 +35,16 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 ### Métriques Spécifiques aux Bibliothèques
 | Bibliothèque | Applications Affectées | Total CVE |
 |--------------|-----------------------|-----------|
-| stdlib | gitlab-agent, policy-reporter, kyverno, kube-prometheus-stack, velero, trivy | 6 |
-| libssl3 | postgresql, backend-ddf, rabbitmq, keycloak, trivy | 5 |
-| libgnutls30 | rabbitmq, postgresql, keycloak | 3 |
-| libsystemd0 | rabbitmq, postgresql, keycloak | 3 |
-| libudev1 | rabbitmq, postgresql, keycloak | 3 |
-| openssl | rabbitmq, postgresql, keycloak | 3 |
-| github.com/Azure/azure-sdk-for-go/sdk/azidentity | kyverno, kube-prometheus-stack, trivy | 3 |
-| curl | rabbitmq, amazon-cloudwatch | 2 |
-| libcrypto3 | backend-ddf, trivy | 2 |
-| golang.org/x/net | kyverno, velero | 2 |
+| stdlib | trivy, kube-prometheus-stack, velero, policy-reporter, kyverno, gitlab-agent | 6 |
+| libssl3 | rabbitmq, trivy, backend-ddf, postgresql, keycloak | 5 |
+| libgnutls30 | postgresql, keycloak, rabbitmq | 3 |
+| libsystemd0 | postgresql, keycloak, rabbitmq | 3 |
+| libudev1 | postgresql, keycloak, rabbitmq | 3 |
+| openssl | postgresql, keycloak, rabbitmq | 3 |
+| github.com/Azure/azure-sdk-for-go/sdk/azidentity | kube-prometheus-stack, kyverno, trivy | 3 |
+| curl | amazon-cloudwatch, rabbitmq | 2 |
+| libcrypto3 | trivy, backend-ddf | 2 |
+| golang.org/x/net | velero, kyverno | 2 |
 | glibc | amazon-cloudwatch | 1 |
 | glibc-common | amazon-cloudwatch | 1 |
 | glibc-langpack-en | amazon-cloudwatch | 1 |
@@ -68,9 +68,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 * rabbitmq a également un nombre significatif de CVE (18).
 * trivy a également un nombre significatif de CVE (15).
 * La majorité des CVE sont classées comme étant de haute gravité (26%), avec seulement une petite fraction étant critiques (5%).
-* La bibliothèque stdlib est récurrente à travers plusieurs CVE et applications (gitlab-agent, policy-reporter, kyverno, kube-prometheus-stack, velero, trivy), indiquant des vulnérabilités communes dans cette bibliothèque.
-* La bibliothèque libssl3 est récurrente à travers plusieurs CVE et applications (postgresql, backend-ddf, rabbitmq, keycloak, trivy), indiquant des vulnérabilités communes dans cette bibliothèque.
-* La bibliothèque libgnutls30 est récurrente à travers plusieurs CVE et applications (rabbitmq, postgresql, keycloak), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque stdlib est récurrente à travers plusieurs CVE et applications (trivy, kube-prometheus-stack, velero, policy-reporter, kyverno, gitlab-agent), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque libssl3 est récurrente à travers plusieurs CVE et applications (rabbitmq, trivy, backend-ddf, postgresql, keycloak), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque libgnutls30 est récurrente à travers plusieurs CVE et applications (postgresql, keycloak, rabbitmq), indiquant des vulnérabilités communes dans cette bibliothèque.
 
 ## Liste Détaillée des CVE
 ### CVE Critiques
@@ -133,10 +133,6 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 | [CVE-2023-3978](#cve-2023-3978) | velero |
 | [CVE-2023-44487](#cve-2023-44487) | velero |
 | [CVE-2024-24786](#cve-2024-24786) | velero |
-### CVE Basses
-
-| CVE ID | Applications |
-|--------|--------------|
 ### CVE Critiques
 #### CVE-2024-24790
 **Gravité:** CRITICAL (9.8)
@@ -1400,4 +1396,3 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-07-02T22:15:04Z
 - Dernière modification: 2024-07-03T12:53:24Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24791
-### CVE Basses
