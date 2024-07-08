@@ -8,10 +8,12 @@
 Ce rapport fournit une liste détaillée des vulnérabilités et expositions communes (CVE) présentes dans le cluster de production. Chaque entrée inclut l'identifiant CVE, l'application affectée, et les bibliothèques ou composants associés. Le rapport démontre que toutes les CVE répertoriées sont dues à des mises à jour non publiées par leurs mainteneurs respectifs. Nous utilisons un outil appelé Renovate pour être notifiés des mises à jour de composants disponibles sur notre cluster, garantissant que nous exécutons toujours la dernière version mise à disposition par le mainteneur.
 
 ## Kubernetes Ingress Report
-Generated on: 2024-07-08 20:41:47.399301
+Generated on: 2024-07-08 20:50:24.250162
 
 | Namespace | Ingress Name | Host | Address | Type |
 |-----------|--------------|------|---------|------|
+| kps | blackbox-prometheus-blackbox-exporter | blackbox.h4ckm1n.org | 192.168.49.2 | Private |
+| kps | kps-prometheus | prometheus.h4ckm1n.org | 192.168.49.2 | Private |
 
 **Note:** Only public endpoints are sensitive as other endpoints are only accessible behind a VPN.
 
@@ -19,34 +21,45 @@ Generated on: 2024-07-08 20:41:47.399301
 ### Métriques de Sévérité
 | Type de CVE  | Nombre | Pourcentage du total |
 |--------------|--------|----------------------|
-| CVE Critiques | 6 | 9.2% |
-| CVE Élevées  | 6 | 9.2% |
-| CVE Moyennes  | 53 | 81.5% |
-| CVE Basses  | 0 | 0.0% |
+| CVE Critiques | 6 | 6.5% |
+| CVE Élevées  | 8 | 8.7% |
+| CVE Moyennes  | 75 | 81.5% |
+| CVE Basses  | 3 | 3.3% |
 | CVE Inconnues  | 0 | 0.0% |
 
 ### Métriques Spécifiques aux Applications
 | Application | CVE Critiques | CVE Élevées | CVE Moyennes | CVE Basses | Total CVE |
 |-------------|---------------|-------------|--------------|-----------|-----------|
 | kube-system | 5 | 5 | 43 | 0 | 53 |
+| kps | 0 | 2 | 22 | 3 | 27 |
 | ingress-nginx | 1 | 1 | 9 | 0 | 11 |
 | trivy-system | 0 | 0 | 1 | 0 | 1 |
 
 ### Métriques Spécifiques aux Bibliothèques
 | Bibliothèque | Applications Affectées | Total CVE |
 |--------------|-----------------------|-----------|
-| stdlib | kube-system, ingress-nginx, trivy-system | 9 |
-| golang.org/x/net | kube-system, ingress-nginx | 1 |
-| google.golang.org/protobuf | kube-system, ingress-nginx | 1 |
+| stdlib | trivy-system, ingress-nginx, kube-system | 9 |
+| golang.org/x/net | ingress-nginx, kube-system | 1 |
+| google.golang.org/protobuf | ingress-nginx, kube-system | 1 |
+| busybox | kps | 4 |
+| busybox-binsh | kps | 4 |
+| libcrypto3 | kps | 4 |
+| libexpat | kps | 3 |
+| libssl3 | kps | 4 |
+| ssl_client | kps | 4 |
+| certifi | kps | 1 |
+| idna | kps | 1 |
+| requests | kps | 1 |
+| urllib3 | kps | 1 |
 
 ### Observations Clés
 * kube-system est l'application la plus affectée avec un total de 53 CVE.
+* kps a également un nombre significatif de CVE (27).
 * ingress-nginx a également un nombre significatif de CVE (11).
-* trivy-system a également un nombre significatif de CVE (1).
-* La majorité des CVE sont classées comme étant de haute gravité (9%), avec seulement une petite fraction étant critiques (9%).
-* La bibliothèque stdlib est récurrente à travers plusieurs CVE et applications (applications, cves), indiquant des vulnérabilités communes dans cette bibliothèque.
-* La bibliothèque golang.org/x/net est récurrente à travers plusieurs CVE et applications (applications, cves), indiquant des vulnérabilités communes dans cette bibliothèque.
-* La bibliothèque google.golang.org/protobuf est récurrente à travers plusieurs CVE et applications (applications, cves), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La majorité des CVE sont classées comme étant de haute gravité (9%), avec seulement une petite fraction étant critiques (7%).
+* La bibliothèque stdlib est récurrente à travers plusieurs CVE et applications (cves, applications), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque golang.org/x/net est récurrente à travers plusieurs CVE et applications (cves, applications), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque google.golang.org/protobuf est récurrente à travers plusieurs CVE et applications (cves, applications), indiquant des vulnérabilités communes dans cette bibliothèque.
 
 ## Liste Détaillée des CVE
 ### CVE Critiques
@@ -59,6 +72,8 @@ Generated on: 2024-07-08 20:41:47.399301
 | CVE ID | Applications |
 |--------|--------------|
 | [CVE-2023-45288](#cve-2023-45288) | ingress-nginx, kube-system |
+| [CVE-2023-52425](#cve-2023-52425) | kps |
+| [CVE-2024-28757](#cve-2024-28757) | kps |
 ### CVE Moyennes
 
 | CVE ID | Applications |
@@ -72,6 +87,23 @@ Generated on: 2024-07-08 20:41:47.399301
 | [CVE-2024-24785](#cve-2024-24785) | ingress-nginx, kube-system |
 | [CVE-2024-24789](#cve-2024-24789) | ingress-nginx, kube-system |
 | [CVE-2024-24791](#cve-2024-24791) | ingress-nginx, kube-system, trivy-system |
+| [CVE-2023-42363](#cve-2023-42363) | kps |
+| [CVE-2023-42364](#cve-2023-42364) | kps |
+| [CVE-2023-42365](#cve-2023-42365) | kps |
+| [CVE-2023-42366](#cve-2023-42366) | kps |
+| [CVE-2024-4603](#cve-2024-4603) | kps |
+| [CVE-2024-4741](#cve-2024-4741) | kps |
+| [CVE-2024-5535](#cve-2024-5535) | kps |
+| [CVE-2023-52426](#cve-2023-52426) | kps |
+| [CVE-2024-3651](#cve-2024-3651) | kps |
+| [CVE-2024-35195](#cve-2024-35195) | kps |
+| [CVE-2024-37891](#cve-2024-37891) | kps |
+### CVE Basses
+
+| CVE ID | Applications |
+|--------|--------------|
+| [CVE-2024-2511](#cve-2024-2511) | kps |
+| [CVE-2024-39689](#cve-2024-39689) | kps |
 ### CVE Critiques
 #### CVE-2024-24790
 **Gravité:** CRITICAL (9.8)  
@@ -137,6 +169,24 @@ Generated on: 2024-07-08 20:41:47.399301
 - Date de publication: 2024-04-04T21:15:16Z  
 - Dernière modification: 2024-05-01T18:15:10Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45288  
+#### CVE-2023-52425
+**Gravité:** HIGH (7.5)  
+**Applications Affectées:** kps  
+**Details:**
+- libexpat (Versions: 2.5.0-r2)  
+- Titre: expat: parsing large tokens can trigger a denial of service  
+- Date de publication: 2024-02-04T20:15:46Z  
+- Dernière modification: 2024-06-14T13:15:49Z  
+- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-52425  
+#### CVE-2024-28757
+**Gravité:** HIGH (7.5)  
+**Applications Affectées:** kps  
+**Details:**
+- libexpat (Versions: 2.5.0-r2)  
+- Titre: expat: XML Entity Expansion  
+- Date de publication: 2024-03-10T05:15:06Z  
+- Dernière modification: 2024-05-01T19:15:22Z  
+- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-28757  
 #### CVE-2023-45288
 **Gravité:** HIGH (7.5)  
 **Applications Affectées:** kube-system  
@@ -264,6 +314,204 @@ Generated on: 2024-07-08 20:41:47.399301
 - Date de publication: 2024-07-02T22:15:04Z  
 - Dernière modification: 2024-07-03T12:53:24Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24791  
+#### CVE-2023-42363
+**Gravité:** MEDIUM (5.5)  
+**Applications Affectées:** kps  
+**Details:**
+- busybox (Versions: 1.36.1-r15)  
+- Titre: busybox: use-after-free in awk  
+- Date de publication: 2023-11-27T22:15:07Z  
+- Dernière modification: 2023-11-30T05:06:49Z  
+- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-42363  
+#### CVE-2023-42364
+**Gravité:** MEDIUM (5.5)  
+**Applications Affectées:** kps  
+**Details:**
+- busybox (Versions: 1.36.1-r15)  
+- Titre: busybox: use-after-free  
+- Date de publication: 2023-11-27T23:15:07Z  
+- Dernière modification: 2023-11-30T05:07:10Z  
+- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-42364  
+#### CVE-2023-42365
+**Gravité:** MEDIUM (5.5)  
+**Applications Affectées:** kps  
+**Details:**
+- busybox (Versions: 1.36.1-r15)  
+- Titre: busybox:  use-after-free  
+- Date de publication: 2023-11-27T23:15:07Z  
+- Dernière modification: 2023-11-30T05:08:08Z  
+- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-42365  
+#### CVE-2023-42366
+**Gravité:** MEDIUM (5.5)  
+**Applications Affectées:** kps  
+**Details:**
+- busybox (Versions: 1.36.1-r15)  
+- Titre: busybox: A heap-buffer-overflow  
+- Date de publication: 2023-11-27T23:15:07Z  
+- Dernière modification: 2023-11-30T05:08:23Z  
+- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-42366  
+#### CVE-2023-42363
+**Gravité:** MEDIUM (5.5)  
+**Applications Affectées:** kps  
+**Details:**
+- busybox-binsh (Versions: 1.36.1-r15)  
+- Titre: busybox: use-after-free in awk  
+- Date de publication: 2023-11-27T22:15:07Z  
+- Dernière modification: 2023-11-30T05:06:49Z  
+- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-42363  
+#### CVE-2023-42364
+**Gravité:** MEDIUM (5.5)  
+**Applications Affectées:** kps  
+**Details:**
+- busybox-binsh (Versions: 1.36.1-r15)  
+- Titre: busybox: use-after-free  
+- Date de publication: 2023-11-27T23:15:07Z  
+- Dernière modification: 2023-11-30T05:07:10Z  
+- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-42364  
+#### CVE-2023-42365
+**Gravité:** MEDIUM (5.5)  
+**Applications Affectées:** kps  
+**Details:**
+- busybox-binsh (Versions: 1.36.1-r15)  
+- Titre: busybox:  use-after-free  
+- Date de publication: 2023-11-27T23:15:07Z  
+- Dernière modification: 2023-11-30T05:08:08Z  
+- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-42365  
+#### CVE-2023-42366
+**Gravité:** MEDIUM (5.5)  
+**Applications Affectées:** kps  
+**Details:**
+- busybox-binsh (Versions: 1.36.1-r15)  
+- Titre: busybox: A heap-buffer-overflow  
+- Date de publication: 2023-11-27T23:15:07Z  
+- Dernière modification: 2023-11-30T05:08:23Z  
+- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-42366  
+#### CVE-2024-4603
+**Gravité:** MEDIUM (5.3)  
+**Applications Affectées:** kps  
+**Details:**
+- libcrypto3 (Versions: 3.1.4-r5)  
+- Titre: openssl: Excessive time spent checking DSA keys and parameters  
+- Date de publication: 2024-05-16T16:15:10Z  
+- Dernière modification: 2024-06-21T19:15:30Z  
+- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-4603  
+#### CVE-2024-4741
+**Gravité:** MEDIUM (5.6)  
+**Applications Affectées:** kps  
+**Details:**
+- libcrypto3 (Versions: 3.1.4-r5)  
+- Titre: openssl: Use After Free with SSL_free_buffers  
+- Date de publication:   
+- Dernière modification:   
+- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-4741  
+#### CVE-2024-5535
+**Gravité:** MEDIUM (5.9)  
+**Applications Affectées:** kps  
+**Details:**
+- libcrypto3 (Versions: 3.1.4-r5)  
+- Titre: openssl: SSL_select_next_proto buffer overread  
+- Date de publication: 2024-06-27T11:15:24Z  
+- Dernière modification: 2024-07-03T02:09:04Z  
+- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-5535  
+#### CVE-2023-52426
+**Gravité:** MEDIUM (5.5)  
+**Applications Affectées:** kps  
+**Details:**
+- libexpat (Versions: 2.5.0-r2)  
+- Titre: expat: recursive XML entity expansion vulnerability  
+- Date de publication: 2024-02-04T20:15:46Z  
+- Dernière modification: 2024-03-07T17:15:11Z  
+- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-52426  
+#### CVE-2024-4603
+**Gravité:** MEDIUM (5.3)  
+**Applications Affectées:** kps  
+**Details:**
+- libssl3 (Versions: 3.1.4-r5)  
+- Titre: openssl: Excessive time spent checking DSA keys and parameters  
+- Date de publication: 2024-05-16T16:15:10Z  
+- Dernière modification: 2024-06-21T19:15:30Z  
+- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-4603  
+#### CVE-2024-4741
+**Gravité:** MEDIUM (5.6)  
+**Applications Affectées:** kps  
+**Details:**
+- libssl3 (Versions: 3.1.4-r5)  
+- Titre: openssl: Use After Free with SSL_free_buffers  
+- Date de publication:   
+- Dernière modification:   
+- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-4741  
+#### CVE-2024-5535
+**Gravité:** MEDIUM (5.9)  
+**Applications Affectées:** kps  
+**Details:**
+- libssl3 (Versions: 3.1.4-r5)  
+- Titre: openssl: SSL_select_next_proto buffer overread  
+- Date de publication: 2024-06-27T11:15:24Z  
+- Dernière modification: 2024-07-03T02:09:04Z  
+- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-5535  
+#### CVE-2023-42363
+**Gravité:** MEDIUM (5.5)  
+**Applications Affectées:** kps  
+**Details:**
+- ssl_client (Versions: 1.36.1-r15)  
+- Titre: busybox: use-after-free in awk  
+- Date de publication: 2023-11-27T22:15:07Z  
+- Dernière modification: 2023-11-30T05:06:49Z  
+- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-42363  
+#### CVE-2023-42364
+**Gravité:** MEDIUM (5.5)  
+**Applications Affectées:** kps  
+**Details:**
+- ssl_client (Versions: 1.36.1-r15)  
+- Titre: busybox: use-after-free  
+- Date de publication: 2023-11-27T23:15:07Z  
+- Dernière modification: 2023-11-30T05:07:10Z  
+- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-42364  
+#### CVE-2023-42365
+**Gravité:** MEDIUM (5.5)  
+**Applications Affectées:** kps  
+**Details:**
+- ssl_client (Versions: 1.36.1-r15)  
+- Titre: busybox:  use-after-free  
+- Date de publication: 2023-11-27T23:15:07Z  
+- Dernière modification: 2023-11-30T05:08:08Z  
+- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-42365  
+#### CVE-2023-42366
+**Gravité:** MEDIUM (5.5)  
+**Applications Affectées:** kps  
+**Details:**
+- ssl_client (Versions: 1.36.1-r15)  
+- Titre: busybox: A heap-buffer-overflow  
+- Date de publication: 2023-11-27T23:15:07Z  
+- Dernière modification: 2023-11-30T05:08:23Z  
+- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-42366  
+#### CVE-2024-3651
+**Gravité:** MEDIUM (6.2)  
+**Applications Affectées:** kps  
+**Details:**
+- idna (Versions: 3.6)  
+- Titre: python-idna: potential DoS via resource consumption via specially crafted inputs to idna.encode()  
+- Date de publication: 2024-07-07T18:15:09Z  
+- Dernière modification: 2024-07-07T18:15:09Z  
+- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-3651  
+#### CVE-2024-35195
+**Gravité:** MEDIUM (5.6)  
+**Applications Affectées:** kps  
+**Details:**
+- requests (Versions: 2.31.0)  
+- Titre: requests: subsequent requests to the same host ignore cert verification  
+- Date de publication: 2024-05-20T21:15:09Z  
+- Dernière modification: 2024-06-10T17:16:29Z  
+- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-35195  
+#### CVE-2024-37891
+**Gravité:** MEDIUM (4.4)  
+**Applications Affectées:** kps  
+**Details:**
+- urllib3 (Versions: 1.26.18)  
+- Titre: urllib3: proxy-authorization request header is not stripped during cross-origin redirects  
+- Date de publication: 2024-06-17T20:15:13Z  
+- Dernière modification: 2024-06-20T12:44:22Z  
+- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-37891  
 #### CVE-2023-45288
 **Gravité:** MEDIUM (7.5)  
 **Applications Affectées:** kube-system  
@@ -660,3 +908,31 @@ Generated on: 2024-07-08 20:41:47.399301
 - Date de publication: 2024-07-02T22:15:04Z  
 - Dernière modification: 2024-07-03T12:53:24Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24791  
+### CVE Basses
+#### CVE-2024-2511
+**Gravité:** LOW (3.7)  
+**Applications Affectées:** kps  
+**Details:**
+- libcrypto3 (Versions: 3.1.4-r5)  
+- Titre: openssl: Unbounded memory growth with session handling in TLSv1.3  
+- Date de publication: 2024-04-08T14:15:07Z  
+- Dernière modification: 2024-05-03T13:15:21Z  
+- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-2511  
+#### CVE-2024-2511
+**Gravité:** LOW (3.7)  
+**Applications Affectées:** kps  
+**Details:**
+- libssl3 (Versions: 3.1.4-r5)  
+- Titre: openssl: Unbounded memory growth with session handling in TLSv1.3  
+- Date de publication: 2024-04-08T14:15:07Z  
+- Dernière modification: 2024-05-03T13:15:21Z  
+- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-2511  
+#### CVE-2024-39689
+**Gravité:** LOW (3.7)  
+**Applications Affectées:** kps  
+**Details:**
+- certifi (Versions: 2024.2.2)  
+- Titre: python-certifi: Remove root certificates from `GLOBALTRUST` from the root store  
+- Date de publication: 2024-07-05T19:15:10Z  
+- Dernière modification: 2024-07-05T19:15:10Z  
+- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-39689  
