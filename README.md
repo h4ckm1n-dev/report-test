@@ -8,7 +8,7 @@
 Ce rapport fournit une liste détaillée des vulnérabilités et expositions communes (CVE) présentes dans le cluster de production. Chaque entrée inclut l'identifiant CVE, l'application affectée, et les bibliothèques ou composants associés. Le rapport démontre que toutes les CVE répertoriées sont dues à des mises à jour non publiées par leurs mainteneurs respectifs. Nous utilisons un outil appelé Renovate pour être notifiés des mises à jour de composants disponibles sur notre cluster, garantissant que nous exécutons toujours la dernière version mise à disposition par le mainteneur.
 
 ## Kubernetes Ingress Report
-Generated on: 2024-07-08 20:54:52.376656
+Generated on: 2024-07-08 20:57:58.004571
 
 | Namespace | Ingress Name | Host | Address | Type |
 |-----------|--------------|------|---------|------|
@@ -57,9 +57,9 @@ Generated on: 2024-07-08 20:54:52.376656
 * kps a également un nombre significatif de CVE (27).
 * ingress-nginx a également un nombre significatif de CVE (11).
 * La majorité des CVE sont classées comme étant de haute gravité (9%), avec seulement une petite fraction étant critiques (7%).
-* La bibliothèque stdlib est récurrente à travers plusieurs CVE et applications (applications, cves), indiquant des vulnérabilités communes dans cette bibliothèque.
-* La bibliothèque golang.org/x/net est récurrente à travers plusieurs CVE et applications (applications, cves), indiquant des vulnérabilités communes dans cette bibliothèque.
-* La bibliothèque google.golang.org/protobuf est récurrente à travers plusieurs CVE et applications (applications, cves), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque stdlib est récurrente à travers plusieurs CVE et applications (cves, applications), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque golang.org/x/net est récurrente à travers plusieurs CVE et applications (cves, applications), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque google.golang.org/protobuf est récurrente à travers plusieurs CVE et applications (cves, applications), indiquant des vulnérabilités communes dans cette bibliothèque.
 
 ## Liste Détaillée des CVE
 ### CVE Critiques
