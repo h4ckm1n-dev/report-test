@@ -35,15 +35,15 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 ### Métriques Spécifiques aux Bibliothèques
 | Bibliothèque | Applications Affectées | Total CVE |
 |--------------|-----------------------|-----------|
-| stdlib | kyverno, velero, policy-reporter, trivy, gitlab-agent, kube-prometheus-stack | 6 |
-| libssl3 | keycloak, rabbitmq, trivy, postgresql, backend-ddf | 5 |
-| libgnutls30 | keycloak, rabbitmq, postgresql | 3 |
-| libsystemd0 | keycloak, rabbitmq, postgresql | 3 |
-| libudev1 | keycloak, rabbitmq, postgresql | 3 |
-| openssl | keycloak, rabbitmq, postgresql | 3 |
-| github.com/Azure/azure-sdk-for-go/sdk/azidentity | kyverno, trivy, kube-prometheus-stack | 3 |
-| curl | amazon-cloudwatch, rabbitmq | 2 |
-| libcrypto3 | trivy, backend-ddf | 2 |
+| stdlib | gitlab-agent, policy-reporter, kyverno, kube-prometheus-stack, velero, trivy | 6 |
+| libssl3 | postgresql, backend-ddf, rabbitmq, keycloak, trivy | 5 |
+| libgnutls30 | rabbitmq, postgresql, keycloak | 3 |
+| libsystemd0 | rabbitmq, postgresql, keycloak | 3 |
+| libudev1 | rabbitmq, postgresql, keycloak | 3 |
+| openssl | rabbitmq, postgresql, keycloak | 3 |
+| github.com/Azure/azure-sdk-for-go/sdk/azidentity | kyverno, kube-prometheus-stack, trivy | 3 |
+| curl | rabbitmq, amazon-cloudwatch | 2 |
+| libcrypto3 | backend-ddf, trivy | 2 |
 | golang.org/x/net | kyverno, velero | 2 |
 | glibc | amazon-cloudwatch | 1 |
 | glibc-common | amazon-cloudwatch | 1 |
@@ -68,32 +68,41 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 * rabbitmq a également un nombre significatif de CVE (18).
 * trivy a également un nombre significatif de CVE (15).
 * La majorité des CVE sont classées comme étant de haute gravité (26%), avec seulement une petite fraction étant critiques (5%).
-* La bibliothèque stdlib est récurrente à travers plusieurs CVE et applications (kyverno, velero, policy-reporter, trivy, gitlab-agent, kube-prometheus-stack), indiquant des vulnérabilités communes dans cette bibliothèque.
-* La bibliothèque libssl3 est récurrente à travers plusieurs CVE et applications (keycloak, rabbitmq, trivy, postgresql, backend-ddf), indiquant des vulnérabilités communes dans cette bibliothèque.
-* La bibliothèque libgnutls30 est récurrente à travers plusieurs CVE et applications (keycloak, rabbitmq, postgresql), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque stdlib est récurrente à travers plusieurs CVE et applications (gitlab-agent, policy-reporter, kyverno, kube-prometheus-stack, velero, trivy), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque libssl3 est récurrente à travers plusieurs CVE et applications (postgresql, backend-ddf, rabbitmq, keycloak, trivy), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque libgnutls30 est récurrente à travers plusieurs CVE et applications (rabbitmq, postgresql, keycloak), indiquant des vulnérabilités communes dans cette bibliothèque.
 
 ## Liste Détaillée des CVE
-### Sommaire
+### CVE Critiques
 
 | CVE ID | Applications |
 |--------|--------------|
 | [CVE-2024-24790](#cve-2024-24790) | kube-prometheus-stack, policy-reporter, trivy, velero |
 | [CVE-2023-24540](#cve-2023-24540) | velero |
+### CVE Élevées
+
+| CVE ID | Applications |
+|--------|--------------|
 | [CVE-2024-2961](#cve-2024-2961) | amazon-cloudwatch |
 | [CVE-2023-29403](#cve-2023-29403) | velero |
 | [CVE-2024-6257](#cve-2024-6257) | trivy |
 | [CVE-2023-50387](#cve-2023-50387) | keycloak, postgresql, rabbitmq |
 | [CVE-2023-50868](#cve-2023-50868) | keycloak, postgresql, rabbitmq |
-| [CVE-2024-2398](#cve-2024-2398) | amazon-cloudwatch, rabbitmq |
+| [CVE-2024-2398](#cve-2024-2398) | rabbitmq |
 | [CVE-2023-39325](#cve-2023-39325) | velero |
 | [CVE-2023-45283](#cve-2023-45283) | velero |
 | [CVE-2023-45287](#cve-2023-45287) | velero |
-| [CVE-2023-45288](#cve-2023-45288) | kyverno, velero |
+| [CVE-2023-45288](#cve-2023-45288) | velero |
 | [GHSA-m425-mq94-257g](#ghsa-m425-mq94-257g) | velero |
 | [CVE-2023-24539](#cve-2023-24539) | velero |
 | [CVE-2023-29400](#cve-2023-29400) | velero |
 | [CVE-2024-28182](#cve-2024-28182) | amazon-cloudwatch |
+### CVE Moyennes
+
+| CVE ID | Applications |
+|--------|--------------|
 | [CVE-2024-2004](#cve-2024-2004) | amazon-cloudwatch, rabbitmq |
+| [CVE-2024-2398](#cve-2024-2398) | amazon-cloudwatch |
 | [CVE-2024-2511](#cve-2024-2511) | amazon-cloudwatch |
 | [CVE-2024-4741](#cve-2024-4741) | backend-ddf, trivy |
 | [CVE-2024-5535](#cve-2024-5535) | backend-ddf, trivy |
@@ -107,6 +116,7 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 | [CVE-2024-35255](#cve-2024-35255) | kube-prometheus-stack, kyverno, trivy |
 | [CVE-2024-24789](#cve-2024-24789) | kube-prometheus-stack, policy-reporter, trivy, velero |
 | [CVE-2024-6104](#cve-2024-6104) | kyverno |
+| [CVE-2023-45288](#cve-2023-45288) | kyverno, velero |
 | [CVE-2023-42364](#cve-2023-42364) | trivy |
 | [CVE-2023-42365](#cve-2023-42365) | trivy |
 | [CVE-2023-29406](#cve-2023-29406) | velero |
@@ -123,7 +133,10 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 | [CVE-2023-3978](#cve-2023-3978) | velero |
 | [CVE-2023-44487](#cve-2023-44487) | velero |
 | [CVE-2024-24786](#cve-2024-24786) | velero |
+### CVE Basses
 
+| CVE ID | Applications |
+|--------|--------------|
 ### CVE Critiques
 #### CVE-2024-24790
 **Gravité:** CRITICAL (9.8)
@@ -188,7 +201,6 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-06-05T16:15:10Z
 - Dernière modification: 2024-06-18T17:59:12Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24790
-
 ### CVE Élevées
 #### CVE-2024-2961
 **Gravité:** HIGH (8.8)
@@ -523,7 +535,6 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-04-04T15:15:38Z
 - Dernière modification: 2024-05-01T18:15:17Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-28182
-
 ### CVE Moyennes
 #### CVE-2024-2004
 **Gravité:** MEDIUM (5.3)
@@ -1389,5 +1400,4 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 - Date de publication: 2024-07-02T22:15:04Z
 - Dernière modification: 2024-07-03T12:53:24Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24791
-
 ### CVE Basses
