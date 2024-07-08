@@ -32,18 +32,18 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 | gitlab-agent | 0 | 0 | 1 | 0 | 1 |
 
 ### Métriques Spécifiques aux Bibliothèques
-| Bibliothèque | Applications Affectées | Total CVE |
+| Bibliothèque | Applications Affectées | Nombre de CVE Associés |
 |--------------|-----------------------|-----------|
-| stdlib | gitlab-agent, trivy, policy-reporter, kyverno, velero, kube-prometheus-stack | 22 |
-| libssl3 | keycloak, rabbitmq, trivy, backend-ddf, postgresql | 6 |
-| libgnutls30 | keycloak, rabbitmq, postgresql | 2 |
-| libsystemd0 | keycloak, rabbitmq, postgresql | 2 |
-| libudev1 | keycloak, rabbitmq, postgresql | 2 |
-| openssl | keycloak, rabbitmq, postgresql | 4 |
-| github.com/Azure/azure-sdk-for-go/sdk/azidentity | kyverno, trivy, kube-prometheus-stack | 1 |
-| curl | amazon-cloudwatch, rabbitmq | 2 |
-| libcrypto3 | trivy, backend-ddf | 2 |
-| golang.org/x/net | kyverno, velero | 4 |
+| stdlib | kube-prometheus-stack, velero, policy-reporter, gitlab-agent, trivy, kyverno | 22 |
+| libssl3 | postgresql, keycloak, backend-ddf, rabbitmq, trivy | 6 |
+| libgnutls30 | rabbitmq, postgresql, keycloak | 2 |
+| libsystemd0 | rabbitmq, postgresql, keycloak | 2 |
+| libudev1 | rabbitmq, postgresql, keycloak | 2 |
+| openssl | rabbitmq, postgresql, keycloak | 4 |
+| github.com/Azure/azure-sdk-for-go/sdk/azidentity | trivy, kube-prometheus-stack, kyverno | 1 |
+| curl | rabbitmq, amazon-cloudwatch | 2 |
+| libcrypto3 | backend-ddf, trivy | 2 |
+| golang.org/x/net | velero, kyverno | 4 |
 | glibc | amazon-cloudwatch | 1 |
 | glibc-common | amazon-cloudwatch | 1 |
 | glibc-langpack-en | amazon-cloudwatch | 1 |
