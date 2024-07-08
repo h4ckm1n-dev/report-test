@@ -34,14 +34,14 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 ### Métriques Spécifiques aux Bibliothèques
 | Bibliothèque | Applications Affectées | Nombre de CVE Associés |
 |--------------|-----------------------|-----------|
-| stdlib | velero, kyverno, trivy, kube-prometheus-stack, policy-reporter, gitlab-agent | 22 |
-| libssl3 | rabbitmq, trivy, postgresql, keycloak, backend-ddf | 6 |
-| libgnutls30 | rabbitmq, keycloak, postgresql | 2 |
-| libsystemd0 | rabbitmq, keycloak, postgresql | 2 |
-| libudev1 | rabbitmq, keycloak, postgresql | 2 |
-| openssl | rabbitmq, keycloak, postgresql | 4 |
-| github.com/Azure/azure-sdk-for-go/sdk/azidentity | kyverno, trivy, kube-prometheus-stack | 1 |
-| curl | amazon-cloudwatch, rabbitmq | 2 |
+| stdlib | kyverno, kube-prometheus-stack, gitlab-agent, trivy, policy-reporter, velero | 22 |
+| libssl3 | keycloak, rabbitmq, trivy, backend-ddf, postgresql | 6 |
+| libgnutls30 | rabbitmq, postgresql, keycloak | 2 |
+| libsystemd0 | rabbitmq, postgresql, keycloak | 2 |
+| libudev1 | rabbitmq, postgresql, keycloak | 2 |
+| openssl | rabbitmq, postgresql, keycloak | 4 |
+| github.com/Azure/azure-sdk-for-go/sdk/azidentity | kube-prometheus-stack, trivy, kyverno | 1 |
+| curl | rabbitmq, amazon-cloudwatch | 2 |
 | libcrypto3 | trivy, backend-ddf | 2 |
 | golang.org/x/net | velero, kyverno | 4 |
 | glibc | amazon-cloudwatch | 1 |
@@ -67,9 +67,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 * rabbitmq a également un nombre significatif de CVE (18).
 * trivy a également un nombre significatif de CVE (15).
 * La majorité des CVE sont classées comme étant de haute gravité (26%), avec seulement une petite fraction étant critiques (5%).
-* La bibliothèque stdlib est récurrente à travers plusieurs CVE et applications (applications, cves), indiquant des vulnérabilités communes dans cette bibliothèque.
-* La bibliothèque libssl3 est récurrente à travers plusieurs CVE et applications (applications, cves), indiquant des vulnérabilités communes dans cette bibliothèque.
-* La bibliothèque libgnutls30 est récurrente à travers plusieurs CVE et applications (applications, cves), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque stdlib est récurrente à travers plusieurs CVE et applications (cves, applications), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque libssl3 est récurrente à travers plusieurs CVE et applications (cves, applications), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque libgnutls30 est récurrente à travers plusieurs CVE et applications (cves, applications), indiquant des vulnérabilités communes dans cette bibliothèque.
 
 ## Liste Détaillée des CVE
 ### CVE Critiques
