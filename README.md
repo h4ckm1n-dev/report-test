@@ -37,16 +37,16 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 ### Métriques Spécifiques aux Bibliothèques
 | Bibliothèque | Applications Affectées | Total CVE |
 |--------------|-----------------------|-----------|
-| stdlib | policy-reporter, kyverno, gitlab-agent, trivy, kube-prometheus-stack, velero | 6 |
-| libssl3 | backend-ddf, postgresql, trivy, keycloak, rabbitmq | 5 |
-| libgnutls30 | postgresql, keycloak, rabbitmq | 3 |
-| libsystemd0 | postgresql, keycloak, rabbitmq | 3 |
-| libudev1 | postgresql, keycloak, rabbitmq | 3 |
-| openssl | postgresql, keycloak, rabbitmq | 3 |
-| github.com/Azure/azure-sdk-for-go/sdk/azidentity | kyverno, kube-prometheus-stack, trivy | 3 |
+| stdlib | velero, trivy, kube-prometheus-stack, gitlab-agent, kyverno, policy-reporter | 6 |
+| libssl3 | trivy, rabbitmq, keycloak, postgresql, backend-ddf | 5 |
+| libgnutls30 | keycloak, rabbitmq, postgresql | 3 |
+| libsystemd0 | keycloak, rabbitmq, postgresql | 3 |
+| libudev1 | keycloak, rabbitmq, postgresql | 3 |
+| openssl | keycloak, rabbitmq, postgresql | 3 |
+| github.com/Azure/azure-sdk-for-go/sdk/azidentity | trivy, kube-prometheus-stack, kyverno | 3 |
 | curl | rabbitmq, amazon-cloudwatch | 2 |
-| libcrypto3 | backend-ddf, trivy | 2 |
-| golang.org/x/net | kyverno, velero | 2 |
+| libcrypto3 | trivy, backend-ddf | 2 |
+| golang.org/x/net | velero, kyverno | 2 |
 | glibc | amazon-cloudwatch | 1 |
 | glibc-common | amazon-cloudwatch | 1 |
 | glibc-langpack-en | amazon-cloudwatch | 1 |
@@ -70,22 +70,22 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 * rabbitmq a également un nombre significatif de CVE (18).
 * trivy a également un nombre significatif de CVE (15).
 * La majorité des CVE sont classées comme étant de haute gravité (26%), avec seulement une petite fraction étant critiques (5%).
-* La bibliothèque stdlib est récurrente à travers plusieurs CVE et applications (policy-reporter, kyverno, gitlab-agent, trivy, kube-prometheus-stack, velero), indiquant des vulnérabilités communes dans cette bibliothèque.
-* La bibliothèque libssl3 est récurrente à travers plusieurs CVE et applications (backend-ddf, postgresql, trivy, keycloak, rabbitmq), indiquant des vulnérabilités communes dans cette bibliothèque.
-* La bibliothèque libgnutls30 est récurrente à travers plusieurs CVE et applications (postgresql, keycloak, rabbitmq), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque stdlib est récurrente à travers plusieurs CVE et applications (velero, trivy, kube-prometheus-stack, gitlab-agent, kyverno, policy-reporter), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque libssl3 est récurrente à travers plusieurs CVE et applications (trivy, rabbitmq, keycloak, postgresql, backend-ddf), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque libgnutls30 est récurrente à travers plusieurs CVE et applications (keycloak, rabbitmq, postgresql), indiquant des vulnérabilités communes dans cette bibliothèque.
 
 ## Liste Détaillée des CVE
 ### Sommaire
 
 | CVE ID | Applications |
 |--------|--------------|
-| [CVE-2024-24790](#cve-2024-24790) | policy-reporter, trivy, kube-prometheus-stack, velero |
+| [CVE-2024-24790](#cve-2024-24790) | trivy, velero, kube-prometheus-stack, policy-reporter |
 | [CVE-2023-24540](#cve-2023-24540) | velero |
 | [CVE-2024-2961](#cve-2024-2961) | amazon-cloudwatch |
 | [CVE-2023-29403](#cve-2023-29403) | velero |
 | [CVE-2024-6257](#cve-2024-6257) | trivy |
-| [CVE-2023-50387](#cve-2023-50387) | postgresql, keycloak, rabbitmq |
-| [CVE-2023-50868](#cve-2023-50868) | postgresql, keycloak, rabbitmq |
+| [CVE-2023-50387](#cve-2023-50387) | keycloak, rabbitmq, postgresql |
+| [CVE-2023-50868](#cve-2023-50868) | keycloak, rabbitmq, postgresql |
 | [CVE-2024-2398](#cve-2024-2398) | rabbitmq |
 | [CVE-2023-39325](#cve-2023-39325) | velero |
 | [CVE-2023-45283](#cve-2023-45283) | velero |
@@ -103,8 +103,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - stdlib (Versions: 1.22.3)
 - Titre: golang: net/netip: Unexpected behavior from Is methods for IPv4-mapped IPv6 addresses
-- Date de publication: 2024-06-05T16:15:10Z)
-- Dernière modification: 2024-06-18T17:59:12Z)
+- Date de publication: 2024-06-05T16:15:10Z
+- Dernière modification: 2024-06-18T17:59:12Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24790
 #### CVE-2024-24790
 **Gravité:** CRITICAL (9.8)
@@ -112,8 +112,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - stdlib (Versions: 1.22.3)
 - Titre: golang: net/netip: Unexpected behavior from Is methods for IPv4-mapped IPv6 addresses
-- Date de publication: 2024-06-05T16:15:10Z)
-- Dernière modification: 2024-06-18T17:59:12Z)
+- Date de publication: 2024-06-05T16:15:10Z
+- Dernière modification: 2024-06-18T17:59:12Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24790
 #### CVE-2024-24790
 **Gravité:** CRITICAL (9.8)
@@ -121,8 +121,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - stdlib (Versions: 1.22.3)
 - Titre: golang: net/netip: Unexpected behavior from Is methods for IPv4-mapped IPv6 addresses
-- Date de publication: 2024-06-05T16:15:10Z)
-- Dernière modification: 2024-06-18T17:59:12Z)
+- Date de publication: 2024-06-05T16:15:10Z
+- Dernière modification: 2024-06-18T17:59:12Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24790
 #### CVE-2023-24540
 **Gravité:** CRITICAL (9.8)
@@ -130,8 +130,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - stdlib (Versions: 1.19.8)
 - Titre: golang: html/template: improper handling of JavaScript whitespace
-- Date de publication: 2023-05-11T16:15:09Z)
-- Dernière modification: 2023-11-07T04:08:32Z)
+- Date de publication: 2023-05-11T16:15:09Z
+- Dernière modification: 2023-11-07T04:08:32Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-24540
 #### CVE-2024-24790
 **Gravité:** CRITICAL (9.8)
@@ -139,8 +139,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - stdlib (Versions: 1.19.8)
 - Titre: golang: net/netip: Unexpected behavior from Is methods for IPv4-mapped IPv6 addresses
-- Date de publication: 2024-06-05T16:15:10Z)
-- Dernière modification: 2024-06-18T17:59:12Z)
+- Date de publication: 2024-06-05T16:15:10Z
+- Dernière modification: 2024-06-18T17:59:12Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24790
 #### CVE-2023-24540
 **Gravité:** CRITICAL (9.8)
@@ -148,8 +148,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - stdlib (Versions: 1.19.8)
 - Titre: golang: html/template: improper handling of JavaScript whitespace
-- Date de publication: 2023-05-11T16:15:09Z)
-- Dernière modification: 2023-11-07T04:08:32Z)
+- Date de publication: 2023-05-11T16:15:09Z
+- Dernière modification: 2023-11-07T04:08:32Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-24540
 #### CVE-2024-24790
 **Gravité:** CRITICAL (9.8)
@@ -157,8 +157,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - stdlib (Versions: 1.19.8)
 - Titre: golang: net/netip: Unexpected behavior from Is methods for IPv4-mapped IPv6 addresses
-- Date de publication: 2024-06-05T16:15:10Z)
-- Dernière modification: 2024-06-18T17:59:12Z)
+- Date de publication: 2024-06-05T16:15:10Z
+- Dernière modification: 2024-06-18T17:59:12Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24790
 
 ### CVE Élevées
@@ -168,8 +168,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - glibc (Versions: 2.26-63.amzn2.0.1)
 - Titre: glibc: Out of bounds write in iconv may lead to remote code execution
-- Date de publication: 2024-04-17T18:15:15Z)
-- Dernière modification: 2024-07-03T01:53:40Z)
+- Date de publication: 2024-04-17T18:15:15Z
+- Dernière modification: 2024-07-03T01:53:40Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-2961
 #### CVE-2024-2961
 **Gravité:** HIGH (8.8)
@@ -177,8 +177,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - glibc-common (Versions: 2.26-63.amzn2.0.1)
 - Titre: glibc: Out of bounds write in iconv may lead to remote code execution
-- Date de publication: 2024-04-17T18:15:15Z)
-- Dernière modification: 2024-07-03T01:53:40Z)
+- Date de publication: 2024-04-17T18:15:15Z
+- Dernière modification: 2024-07-03T01:53:40Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-2961
 #### CVE-2024-2961
 **Gravité:** HIGH (8.8)
@@ -186,8 +186,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - glibc-langpack-en (Versions: 2.26-63.amzn2.0.1)
 - Titre: glibc: Out of bounds write in iconv may lead to remote code execution
-- Date de publication: 2024-04-17T18:15:15Z)
-- Dernière modification: 2024-07-03T01:53:40Z)
+- Date de publication: 2024-04-17T18:15:15Z
+- Dernière modification: 2024-07-03T01:53:40Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-2961
 #### CVE-2024-2961
 **Gravité:** HIGH (8.8)
@@ -195,8 +195,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - glibc-minimal-langpack (Versions: 2.26-63.amzn2.0.1)
 - Titre: glibc: Out of bounds write in iconv may lead to remote code execution
-- Date de publication: 2024-04-17T18:15:15Z)
-- Dernière modification: 2024-07-03T01:53:40Z)
+- Date de publication: 2024-04-17T18:15:15Z
+- Dernière modification: 2024-07-03T01:53:40Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-2961
 #### CVE-2024-2961
 **Gravité:** HIGH (8.8)
@@ -204,8 +204,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - libcrypt (Versions: 2.26-63.amzn2.0.1)
 - Titre: glibc: Out of bounds write in iconv may lead to remote code execution
-- Date de publication: 2024-04-17T18:15:15Z)
-- Dernière modification: 2024-07-03T01:53:40Z)
+- Date de publication: 2024-04-17T18:15:15Z
+- Dernière modification: 2024-07-03T01:53:40Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-2961
 #### CVE-2023-29403
 **Gravité:** HIGH (7.8)
@@ -213,8 +213,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - stdlib (Versions: 1.19.8)
 - Titre: golang: runtime: unexpected behavior of setuid/setgid binaries
-- Date de publication: 2023-06-08T21:15:16Z)
-- Dernière modification: 2023-11-25T11:15:14Z)
+- Date de publication: 2023-06-08T21:15:16Z
+- Dernière modification: 2023-11-25T11:15:14Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-29403
 #### CVE-2023-29403
 **Gravité:** HIGH (7.8)
@@ -222,8 +222,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - stdlib (Versions: 1.19.8)
 - Titre: golang: runtime: unexpected behavior of setuid/setgid binaries
-- Date de publication: 2023-06-08T21:15:16Z)
-- Dernière modification: 2023-11-25T11:15:14Z)
+- Date de publication: 2023-06-08T21:15:16Z
+- Dernière modification: 2023-11-25T11:15:14Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-29403
 #### CVE-2024-6257
 **Gravité:** HIGH (7.7)
@@ -231,8 +231,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - github.com/hashicorp/go-getter (Versions: v1.7.4)
 - Titre: hashicorp/go-getter: Arbitrary command execution through local git config file
-- Date de publication: 2024-06-25T17:15:10Z)
-- Dernière modification: 2024-06-25T18:50:42Z)
+- Date de publication: 2024-06-25T17:15:10Z
+- Dernière modification: 2024-06-25T18:50:42Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-6257
 #### CVE-2023-50387
 **Gravité:** HIGH (7.5)
@@ -240,8 +240,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - libsystemd0 (Versions: 252.22-1~deb12u1)
 - Titre: bind9: KeyTrap - Extreme CPU consumption in DNSSEC validator
-- Date de publication: 2024-02-14T16:15:45Z)
-- Dernière modification: 2024-06-10T17:16:15Z)
+- Date de publication: 2024-02-14T16:15:45Z
+- Dernière modification: 2024-06-10T17:16:15Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-50387
 #### CVE-2023-50868
 **Gravité:** HIGH (7.5)
@@ -249,8 +249,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - libsystemd0 (Versions: 252.22-1~deb12u1)
 - Titre: bind9: Preparing an NSEC3 closest encloser proof can exhaust CPU resources
-- Date de publication: 2024-02-14T16:15:45Z)
-- Dernière modification: 2024-06-10T17:16:16Z)
+- Date de publication: 2024-02-14T16:15:45Z
+- Dernière modification: 2024-06-10T17:16:16Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-50868
 #### CVE-2023-50387
 **Gravité:** HIGH (7.5)
@@ -258,8 +258,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - libudev1 (Versions: 252.22-1~deb12u1)
 - Titre: bind9: KeyTrap - Extreme CPU consumption in DNSSEC validator
-- Date de publication: 2024-02-14T16:15:45Z)
-- Dernière modification: 2024-06-10T17:16:15Z)
+- Date de publication: 2024-02-14T16:15:45Z
+- Dernière modification: 2024-06-10T17:16:15Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-50387
 #### CVE-2023-50868
 **Gravité:** HIGH (7.5)
@@ -267,8 +267,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - libudev1 (Versions: 252.22-1~deb12u1)
 - Titre: bind9: Preparing an NSEC3 closest encloser proof can exhaust CPU resources
-- Date de publication: 2024-02-14T16:15:45Z)
-- Dernière modification: 2024-06-10T17:16:16Z)
+- Date de publication: 2024-02-14T16:15:45Z
+- Dernière modification: 2024-06-10T17:16:16Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-50868
 #### CVE-2023-50387
 **Gravité:** HIGH (7.5)
@@ -276,8 +276,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - libsystemd0 (Versions: 252.22-1~deb12u1)
 - Titre: bind9: KeyTrap - Extreme CPU consumption in DNSSEC validator
-- Date de publication: 2024-02-14T16:15:45Z)
-- Dernière modification: 2024-06-10T17:16:15Z)
+- Date de publication: 2024-02-14T16:15:45Z
+- Dernière modification: 2024-06-10T17:16:15Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-50387
 #### CVE-2023-50868
 **Gravité:** HIGH (7.5)
@@ -285,8 +285,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - libsystemd0 (Versions: 252.22-1~deb12u1)
 - Titre: bind9: Preparing an NSEC3 closest encloser proof can exhaust CPU resources
-- Date de publication: 2024-02-14T16:15:45Z)
-- Dernière modification: 2024-06-10T17:16:16Z)
+- Date de publication: 2024-02-14T16:15:45Z
+- Dernière modification: 2024-06-10T17:16:16Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-50868
 #### CVE-2023-50387
 **Gravité:** HIGH (7.5)
@@ -294,8 +294,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - libudev1 (Versions: 252.22-1~deb12u1)
 - Titre: bind9: KeyTrap - Extreme CPU consumption in DNSSEC validator
-- Date de publication: 2024-02-14T16:15:45Z)
-- Dernière modification: 2024-06-10T17:16:15Z)
+- Date de publication: 2024-02-14T16:15:45Z
+- Dernière modification: 2024-06-10T17:16:15Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-50387
 #### CVE-2023-50868
 **Gravité:** HIGH (7.5)
@@ -303,8 +303,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - libudev1 (Versions: 252.22-1~deb12u1)
 - Titre: bind9: Preparing an NSEC3 closest encloser proof can exhaust CPU resources
-- Date de publication: 2024-02-14T16:15:45Z)
-- Dernière modification: 2024-06-10T17:16:16Z)
+- Date de publication: 2024-02-14T16:15:45Z
+- Dernière modification: 2024-06-10T17:16:16Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-50868
 #### CVE-2024-2398
 **Gravité:** HIGH (7.5)
@@ -312,8 +312,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - curl (Versions: 7.88.1-10+deb12u5)
 - Titre: curl: HTTP/2 push headers memory-leak
-- Date de publication: 2024-03-27T08:15:41Z)
-- Dernière modification: 2024-07-03T01:53:12Z)
+- Date de publication: 2024-03-27T08:15:41Z
+- Dernière modification: 2024-07-03T01:53:12Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-2398
 #### CVE-2024-2398
 **Gravité:** HIGH (7.5)
@@ -321,8 +321,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - libcurl4 (Versions: 7.88.1-10+deb12u5)
 - Titre: curl: HTTP/2 push headers memory-leak
-- Date de publication: 2024-03-27T08:15:41Z)
-- Dernière modification: 2024-07-03T01:53:12Z)
+- Date de publication: 2024-03-27T08:15:41Z
+- Dernière modification: 2024-07-03T01:53:12Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-2398
 #### CVE-2023-50387
 **Gravité:** HIGH (7.5)
@@ -330,8 +330,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - libsystemd0 (Versions: 252.22-1~deb12u1)
 - Titre: bind9: KeyTrap - Extreme CPU consumption in DNSSEC validator
-- Date de publication: 2024-02-14T16:15:45Z)
-- Dernière modification: 2024-06-10T17:16:15Z)
+- Date de publication: 2024-02-14T16:15:45Z
+- Dernière modification: 2024-06-10T17:16:15Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-50387
 #### CVE-2023-50868
 **Gravité:** HIGH (7.5)
@@ -339,8 +339,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - libsystemd0 (Versions: 252.22-1~deb12u1)
 - Titre: bind9: Preparing an NSEC3 closest encloser proof can exhaust CPU resources
-- Date de publication: 2024-02-14T16:15:45Z)
-- Dernière modification: 2024-06-10T17:16:16Z)
+- Date de publication: 2024-02-14T16:15:45Z
+- Dernière modification: 2024-06-10T17:16:16Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-50868
 #### CVE-2023-50387
 **Gravité:** HIGH (7.5)
@@ -348,8 +348,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - libudev1 (Versions: 252.22-1~deb12u1)
 - Titre: bind9: KeyTrap - Extreme CPU consumption in DNSSEC validator
-- Date de publication: 2024-02-14T16:15:45Z)
-- Dernière modification: 2024-06-10T17:16:15Z)
+- Date de publication: 2024-02-14T16:15:45Z
+- Dernière modification: 2024-06-10T17:16:15Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-50387
 #### CVE-2023-50868
 **Gravité:** HIGH (7.5)
@@ -357,8 +357,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - libudev1 (Versions: 252.22-1~deb12u1)
 - Titre: bind9: Preparing an NSEC3 closest encloser proof can exhaust CPU resources
-- Date de publication: 2024-02-14T16:15:45Z)
-- Dernière modification: 2024-06-10T17:16:16Z)
+- Date de publication: 2024-02-14T16:15:45Z
+- Dernière modification: 2024-06-10T17:16:16Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-50868
 #### CVE-2023-39325
 **Gravité:** HIGH (7.5)
@@ -366,8 +366,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - stdlib (Versions: 1.19.8)
 - Titre: golang: net/http, x/net/http2: rapid stream resets can cause excessive work (CVE-2023-44487)
-- Date de publication: 2023-10-11T22:15:09Z)
-- Dernière modification: 2024-04-28T04:15:09Z)
+- Date de publication: 2023-10-11T22:15:09Z
+- Dernière modification: 2024-04-28T04:15:09Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-39325
 #### CVE-2023-45283
 **Gravité:** HIGH (7.5)
@@ -375,8 +375,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - stdlib (Versions: 1.19.8)
 - Titre: The filepath package does not recognize paths with a \??\ prefix as sp ...
-- Date de publication: 2023-11-09T17:15:08Z)
-- Dernière modification: 2023-12-14T10:15:07Z)
+- Date de publication: 2023-11-09T17:15:08Z
+- Dernière modification: 2023-12-14T10:15:07Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45283
 #### CVE-2023-45287
 **Gravité:** HIGH (7.5)
@@ -384,8 +384,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - stdlib (Versions: 1.19.8)
 - Titre: golang: crypto/tls: Timing Side Channel attack in RSA based TLS key exchanges.
-- Date de publication: 2023-12-05T17:15:08Z)
-- Dernière modification: 2024-01-12T14:15:48Z)
+- Date de publication: 2023-12-05T17:15:08Z
+- Dernière modification: 2024-01-12T14:15:48Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45287
 #### CVE-2023-45288
 **Gravité:** HIGH (7.5)
@@ -393,8 +393,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - stdlib (Versions: 1.19.8)
 - Titre: golang: net/http, x/net/http2: unlimited number of CONTINUATION frames causes DoS
-- Date de publication: 2024-04-04T21:15:16Z)
-- Dernière modification: 2024-05-01T18:15:10Z)
+- Date de publication: 2024-04-04T21:15:16Z
+- Dernière modification: 2024-05-01T18:15:10Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45288
 #### CVE-2023-39325
 **Gravité:** HIGH (7.5)
@@ -402,8 +402,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - golang.org/x/net (Versions: v0.7.0)
 - Titre: golang: net/http, x/net/http2: rapid stream resets can cause excessive work (CVE-2023-44487)
-- Date de publication: 2023-10-11T22:15:09Z)
-- Dernière modification: 2024-04-28T04:15:09Z)
+- Date de publication: 2023-10-11T22:15:09Z
+- Dernière modification: 2024-04-28T04:15:09Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-39325
 #### GHSA-m425-mq94-257g
 **Gravité:** HIGH (7.5)
@@ -411,8 +411,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - google.golang.org/grpc (Versions: v1.40.0)
 - Titre: gRPC-Go HTTP/2 Rapid Reset vulnerability
-- Date de publication: )
-- Dernière modification: )
+- Date de publication: 
+- Dernière modification: 
 - Lien primaire: https://github.com/advisories/GHSA-m425-mq94-257g
 #### CVE-2023-39325
 **Gravité:** HIGH (7.5)
@@ -420,8 +420,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - stdlib (Versions: 1.19.8)
 - Titre: golang: net/http, x/net/http2: rapid stream resets can cause excessive work (CVE-2023-44487)
-- Date de publication: 2023-10-11T22:15:09Z)
-- Dernière modification: 2024-04-28T04:15:09Z)
+- Date de publication: 2023-10-11T22:15:09Z
+- Dernière modification: 2024-04-28T04:15:09Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-39325
 #### CVE-2023-45283
 **Gravité:** HIGH (7.5)
@@ -429,8 +429,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - stdlib (Versions: 1.19.8)
 - Titre: The filepath package does not recognize paths with a \??\ prefix as sp ...
-- Date de publication: 2023-11-09T17:15:08Z)
-- Dernière modification: 2023-12-14T10:15:07Z)
+- Date de publication: 2023-11-09T17:15:08Z
+- Dernière modification: 2023-12-14T10:15:07Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45283
 #### CVE-2023-45287
 **Gravité:** HIGH (7.5)
@@ -438,8 +438,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - stdlib (Versions: 1.19.8)
 - Titre: golang: crypto/tls: Timing Side Channel attack in RSA based TLS key exchanges.
-- Date de publication: 2023-12-05T17:15:08Z)
-- Dernière modification: 2024-01-12T14:15:48Z)
+- Date de publication: 2023-12-05T17:15:08Z
+- Dernière modification: 2024-01-12T14:15:48Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45287
 #### CVE-2023-45288
 **Gravité:** HIGH (7.5)
@@ -447,8 +447,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - stdlib (Versions: 1.19.8)
 - Titre: golang: net/http, x/net/http2: unlimited number of CONTINUATION frames causes DoS
-- Date de publication: 2024-04-04T21:15:16Z)
-- Dernière modification: 2024-05-01T18:15:10Z)
+- Date de publication: 2024-04-04T21:15:16Z
+- Dernière modification: 2024-05-01T18:15:10Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45288
 #### CVE-2023-24539
 **Gravité:** HIGH (7.3)
@@ -456,8 +456,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - stdlib (Versions: 1.19.8)
 - Titre: golang: html/template: improper sanitization of CSS values
-- Date de publication: 2023-05-11T16:15:09Z)
-- Dernière modification: 2023-11-07T04:08:32Z)
+- Date de publication: 2023-05-11T16:15:09Z
+- Dernière modification: 2023-11-07T04:08:32Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-24539
 #### CVE-2023-29400
 **Gravité:** HIGH (7.3)
@@ -465,8 +465,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - stdlib (Versions: 1.19.8)
 - Titre: golang: html/template: improper handling of empty HTML attributes
-- Date de publication: 2023-05-11T16:15:09Z)
-- Dernière modification: 2023-11-07T04:11:10Z)
+- Date de publication: 2023-05-11T16:15:09Z
+- Dernière modification: 2023-11-07T04:11:10Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-29400
 #### CVE-2023-24539
 **Gravité:** HIGH (7.3)
@@ -474,8 +474,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - stdlib (Versions: 1.19.8)
 - Titre: golang: html/template: improper sanitization of CSS values
-- Date de publication: 2023-05-11T16:15:09Z)
-- Dernière modification: 2023-11-07T04:08:32Z)
+- Date de publication: 2023-05-11T16:15:09Z
+- Dernière modification: 2023-11-07T04:08:32Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-24539
 #### CVE-2023-29400
 **Gravité:** HIGH (7.3)
@@ -483,8 +483,8 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - stdlib (Versions: 1.19.8)
 - Titre: golang: html/template: improper handling of empty HTML attributes
-- Date de publication: 2023-05-11T16:15:09Z)
-- Dernière modification: 2023-11-07T04:11:10Z)
+- Date de publication: 2023-05-11T16:15:09Z
+- Dernière modification: 2023-11-07T04:11:10Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-29400
 #### CVE-2024-28182
 **Gravité:** HIGH (5.3)
@@ -492,6 +492,6 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 **Details:**
 - libnghttp2 (Versions: 1.41.0-1.amzn2.0.4)
 - Titre: nghttp2: CONTINUATION frames DoS
-- Date de publication: 2024-04-04T15:15:38Z)
-- Dernière modification: 2024-05-01T18:15:17Z)
+- Date de publication: 2024-04-04T15:15:38Z
+- Dernière modification: 2024-05-01T18:15:17Z
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-28182
