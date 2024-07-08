@@ -36,7 +36,7 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 ### Métriques Spécifiques aux Bibliothèques
 | Bibliothèque | Applications Affectées | Total CVE |
 |--------------|-----------------------|-----------|
-| stdlib | ingress-nginx, trivy-system, kube-system | 9 |
+| stdlib | trivy-system, ingress-nginx, kube-system | 9 |
 | golang.org/x/net | ingress-nginx, kube-system | 1 |
 | google.golang.org/protobuf | ingress-nginx, kube-system | 1 |
 | busybox | kps | 4 |
