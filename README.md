@@ -74,19 +74,19 @@ Il n'y a actuellement aucun point de terminaison public dans ce rapport.
 * La bibliothèque busybox-binsh est récurrente à travers 4 CVE et 1 namespaces (kps), indiquant des vulnérabilités communes dans cette bibliothèque.
 
 ## Liste Détaillée des CVE
-### CVE Critiques
+### Details CVE Critiques
 
 | CVE ID | namespaces |
 |--------|--------------|
 | [CVE-2024-24790](#cve-2024-24790) | ingress-nginx, kube-system |
-### CVE Élevées
+### Details CVE Élevées
 
 | CVE ID | namespaces |
 |--------|--------------|
 | [CVE-2023-45288](#cve-2023-45288) | ingress-nginx, kube-system |
 | [CVE-2023-52425](#cve-2023-52425) | kps |
 | [CVE-2024-28757](#cve-2024-28757) | kps |
-### CVE Moyennes
+### Details CVE Moyennes
 
 | CVE ID | namespaces |
 |--------|--------------|
@@ -110,13 +110,13 @@ Il n'y a actuellement aucun point de terminaison public dans ce rapport.
 | [CVE-2024-3651](#cve-2024-3651) | kps |
 | [CVE-2024-35195](#cve-2024-35195) | kps |
 | [CVE-2024-37891](#cve-2024-37891) | kps |
-### CVE Basses
+### Details CVE Basses
 
 | CVE ID | namespaces |
 |--------|--------------|
 | [CVE-2024-2511](#cve-2024-2511) | kps |
 | [CVE-2024-39689](#cve-2024-39689) | kps |
-### CVE Critiques
+### Details CVE Critiques
 #### CVE-2024-24790
 **Gravité:** CRITICAL (9.8)  
 **namespaces Affectées:** ingress-nginx  
@@ -171,7 +171,7 @@ Il n'y a actuellement aucun point de terminaison public dans ce rapport.
 - Date de publication: 2024-06-05T16:15:10Z  
 - Dernière modification: 2024-06-18T17:59:12Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24790  
-### CVE Élevées
+### Details CVE Élevées
 #### CVE-2023-45288
 **Gravité:** HIGH (7.5)  
 **namespaces Affectées:** ingress-nginx  
@@ -244,7 +244,7 @@ Il n'y a actuellement aucun point de terminaison public dans ce rapport.
 - Date de publication: 2024-04-04T21:15:16Z  
 - Dernière modification: 2024-05-01T18:15:10Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45288  
-### CVE Moyennes
+### Details CVE Moyennes
 #### CVE-2023-45288
 **Gravité:** MEDIUM (7.5)  
 **namespaces Affectées:** ingress-nginx  
@@ -920,7 +920,7 @@ Il n'y a actuellement aucun point de terminaison public dans ce rapport.
 - Date de publication: 2024-07-02T22:15:04Z  
 - Dernière modification: 2024-07-03T12:53:24Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24791  
-### CVE Basses
+### Details CVE Basses
 #### CVE-2024-2511
 **Gravité:** LOW (3.7)  
 **namespaces Affectées:** kps  
