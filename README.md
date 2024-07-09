@@ -13,22 +13,6 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 | kps | blackbox-prometheus-blackbox-exporter | blackbox.h4ckm1n.org | 192.168.49.2 | Privé |
 | kps | kps-prometheus | prometheus.h4ckm1n.org | 192.168.49.2 | Privé |
 
-**Note : Seuls les points de terminaison publics sont sensibles, car les autres points de terminaison ne sont accessibles que via un VPN.**
-
-### Endpoints Sensibles
-
-#### Privés
-- **Namespace:** kps
-  - **Ingress Name:** blackbox-prometheus-blackbox-exporter
-  - **Host:** blackbox.h4ckm1n.org
-  - **Address:** 192.168.49.2
-- **Namespace:** kps
-  - **Ingress Name:** kps-prometheus
-  - **Host:** prometheus.h4ckm1n.org
-  - **Address:** 192.168.49.2
-
-Il n'y a actuellement aucun point de terminaison public dans ce rapport.
-
 
 ### Métriques de Sévérité
 | Type de CVE  | Nombre | Pourcentage du total |
@@ -50,7 +34,7 @@ Il n'y a actuellement aucun point de terminaison public dans ce rapport.
 ### Métriques Spécifiques aux Bibliothèques
 | Bibliothèque | namespaces Affectées | Total CVE |
 |--------------|-----------------------|-----------|
-| stdlib | ingress-nginx, kube-system, trivy-system | 9 |
+| stdlib | ingress-nginx, trivy-system, kube-system | 9 |
 | busybox | kps | 4 |
 | busybox-binsh | kps | 4 |
 | libcrypto3 | kps | 4 |
