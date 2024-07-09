@@ -73,7 +73,7 @@ Il n'y a actuellement aucun point de terminaison public dans ce rapport.
 * La bibliothèque golang.org/x/net est récurrente à travers plusieurs CVE et applications (ingress-nginx, kube-system), indiquant des vulnérabilités communes dans cette bibliothèque.
 * La bibliothèque google.golang.org/protobuf est récurrente à travers plusieurs CVE et applications (ingress-nginx, kube-system), indiquant des vulnérabilités communes dans cette bibliothèque.
 
-## Liste Détaillée des CVE
+<details><summary><strong>Liste Détaillée des CVE</strong></summary>
 ### CVE Critiques
 
 | CVE ID | Applications |
@@ -948,3 +948,4 @@ Il n'y a actuellement aucun point de terminaison public dans ce rapport.
 - Date de publication: 2024-07-05T19:15:10Z  
 - Dernière modification: 2024-07-05T19:15:10Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-39689  
+</details>
