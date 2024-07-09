@@ -65,7 +65,7 @@ Il n'y a actuellement aucun point de terminaison public dans ce rapport.
 | urllib3 | kps | 1 |
 
 ### Observations Clés
-* La majorité des CVE sont classées comme étant de haute gravité (9%), avec 7% étant critiques, 82% moyennes, 3% basses, et 0% inconnues.
+* La majorité des CVE sont classées comme étant de haute gravité (9%), avec 7% critical, 82% medium, 3% low, 0% unknown.
 * kube-system est l'application la plus affectée avec un total de 53 CVE.
 * kps a également un nombre significatif de CVE (27), incluant 0 critiques, 2 élevées, 22 moyennes et 3 basses.
 * ingress-nginx a également un nombre significatif de CVE (11), incluant 1 critiques, 1 élevées, 9 moyennes et 0 basses.
