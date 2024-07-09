@@ -54,15 +54,37 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 | urllib3 | kps | 1 |
 | go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc | kube-system | 1 |
 | gopkg.in/square/go-jose.v2 | kube-system | 1 |
+### Observations Clés des Vulnérabilités
 
-### Observations Clés
-* La majorité des CVE sont classées comme étant de gravité moyenne (76%), avec 6% critiques, 12% élevées, 76% moyennes, 6% basses, et 0% inconnues.
-* kps est l'application la plus affectée avec un total de 27 CVE, incluant 0 critiques, 2 élevées, 22 moyennes et 3 basses.
-* ingress-nginx a également un nombre significatif de CVE (11), incluant 1 critiques, 1 élevées, 9 moyennes et 0 basses.
-* kube-system a également un nombre significatif de CVE (10), incluant 2 critiques, 3 élevées, 5 moyennes et 0 basses.
-* La bibliothèque stdlib est récurrente à travers 10 CVE et 3 namespaces (ingress-nginx, kube-system, trivy-system), indiquant des vulnérabilités communes dans cette bibliothèque.
-* La bibliothèque busybox est récurrente à travers 4 CVE et 1 namespaces (kps), indiquant des vulnérabilités communes dans cette bibliothèque.
-* La bibliothèque busybox-binsh est récurrente à travers 4 CVE et 1 namespaces (kps), indiquant des vulnérabilités communes dans cette bibliothèque.
+**Répartition des CVE par Gravité**
+- Critiques: 6%
+- Élevées: 12%
+- Moyennes: 76%
+- Basses: 6%
+- Inconnues: 0%
+
+**Applications les Plus Affectées**
+- kps: 27 CVEs (Critiques: 0, Élevées: 2, Moyennes: 22, Basses: 3)
+- ingress-nginx: 11 CVEs (Critiques: 1, Élevées: 1, Moyennes: 9, Basses: 0)
+- kube-system: 10 CVEs (Critiques: 2, Élevées: 3, Moyennes: 5, Basses: 0)
+- trivy-system: 1 CVEs (Critiques: 0, Élevées: 0, Moyennes: 1, Basses: 0)
+
+**Bibliothèques avec Vulnérabilités Récurrentes**
+- stdlib: Affecte 3 namespaces avec 10 CVEs (ingress-nginx, kube-system, trivy-system)
+- busybox: Affecte 1 namespaces avec 4 CVEs (kps)
+- busybox-binsh: Affecte 1 namespaces avec 4 CVEs (kps)
+- libcrypto3: Affecte 1 namespaces avec 4 CVEs (kps)
+- libssl3: Affecte 1 namespaces avec 4 CVEs (kps)
+- ssl_client: Affecte 1 namespaces avec 4 CVEs (kps)
+- libexpat: Affecte 1 namespaces avec 3 CVEs (kps)
+- golang.org/x/net: Affecte 1 namespaces avec 1 CVEs (ingress-nginx)
+- google.golang.org/protobuf: Affecte 1 namespaces avec 1 CVEs (ingress-nginx)
+- certifi: Affecte 1 namespaces avec 1 CVEs (kps)
+- idna: Affecte 1 namespaces avec 1 CVEs (kps)
+- requests: Affecte 1 namespaces avec 1 CVEs (kps)
+- urllib3: Affecte 1 namespaces avec 1 CVEs (kps)
+- go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc: Affecte 1 namespaces avec 1 CVEs (kube-system)
+- gopkg.in/square/go-jose.v2: Affecte 1 namespaces avec 1 CVEs (kube-system)
 
 ## Liste Détaillée des CVE
 ### Details CVE Critiques
