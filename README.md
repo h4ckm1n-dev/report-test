@@ -50,7 +50,7 @@ Il n'y a actuellement aucun point de terminaison public dans ce rapport.
 ### Métriques Spécifiques aux Bibliothèques
 | Bibliothèque | Applications Affectées | Total CVE |
 |--------------|-----------------------|-----------|
-| stdlib | trivy-system, kube-system, ingress-nginx | 9 |
+| stdlib | kube-system, trivy-system, ingress-nginx | 9 |
 | busybox | kps | 4 |
 | busybox-binsh | kps | 4 |
 | libcrypto3 | kps | 4 |
@@ -65,43 +65,15 @@ Il n'y a actuellement aucun point de terminaison public dans ce rapport.
 | urllib3 | kps | 1 |
 
 ### Observations Clés
-* kube-system est l'application la plus affectée avec un total de 53 CVE, dont 5 critiques, 5 élevées, 43 moyennes, et 0 basses.
-* kps a également un nombre significatif de CVE (27), dont 0 critiques, 2 élevées, 22 moyennes, et 3 basses.
-* ingress-nginx a également un nombre significatif de CVE (11), dont 1 critiques, 1 élevées, 9 moyennes, et 0 basses.
+* kube-system est l'application la plus affectée avec un total de 53 CVE.
+* kps a également un nombre significatif de CVE (27).
+* ingress-nginx a également un nombre significatif de CVE (11).
 * La majorité des CVE sont classées comme étant de haute gravité (9%), avec seulement une petite fraction étant critiques (7%).
-* La bibliothèque stdlib est récurrente à travers plusieurs CVE et applications (trivy-system, kube-system, ingress-nginx), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque stdlib est récurrente à travers plusieurs CVE et applications (kube-system, trivy-system, ingress-nginx), indiquant des vulnérabilités communes dans cette bibliothèque.
 * La bibliothèque golang.org/x/net est récurrente à travers plusieurs CVE et applications (kube-system, ingress-nginx), indiquant des vulnérabilités communes dans cette bibliothèque.
 * La bibliothèque google.golang.org/protobuf est récurrente à travers plusieurs CVE et applications (kube-system, ingress-nginx), indiquant des vulnérabilités communes dans cette bibliothèque.
-### CVE Critiques
-| CVE ID | Applications |
-|--------|--------------|
-| CVE-2024-24790 | ingress-nginx |
-| CVE-2024-24790 | kube-system |
-| CVE-2024-24790 | kube-system |
-| CVE-2024-24790 | kube-system |
-| CVE-2024-24790 | kube-system |
-| CVE-2024-24790 | kube-system |
-### CVE Élevées
-| CVE ID | Applications |
-|--------|--------------|
-| CVE-2023-45288 | ingress-nginx |
-| CVE-2023-52425 | kps |
-| CVE-2024-28757 | kps |
-| CVE-2023-45288 | kube-system |
-| CVE-2023-45288 | kube-system |
-| CVE-2023-45288 | kube-system |
-| CVE-2023-45288 | kube-system |
-| CVE-2023-45288 | kube-system |
-### CVE Moyennes
-| CVE ID | Applications |
-|--------|--------------|
-### CVE Basses
-| CVE ID | Applications |
-|--------|--------------|
 
-## Liste Détaillée des CVE
-<details>
-<summary>Afficher tous les CVE</summary>
+<details><summary><strong>Liste Détaillée des CVE</strong></summary>
 ### CVE Critiques
 
 | CVE ID | Applications |
