@@ -19,43 +19,45 @@
 ### Métriques de Sévérité
 | Type de CVE  | Nombre | Pourcentage du total |
 |--------------|--------|----------------------|
-| CVE Critiques | 6 | 6.5% |
-| CVE Élevées  | 8 | 8.7% |
-| CVE Moyennes  | 75 | 81.5% |
-| CVE Basses  | 3 | 3.3% |
+| CVE Critiques | 3 | 6.1% |
+| CVE Élevées  | 6 | 12.2% |
+| CVE Moyennes  | 37 | 75.5% |
+| CVE Basses  | 3 | 6.1% |
 | CVE Inconnues  | 0 | 0.0% |
 
 ### Métriques Spécifiques aux namespaces
 | Application | CVE Critiques | CVE Élevées | CVE Moyennes | CVE Basses | Total CVE |
 |-------------|---------------|-------------|--------------|-----------|-----------|
-| kube-system | 5 | 5 | 43 | 0 | 53 |
 | kps | 0 | 2 | 22 | 3 | 27 |
 | ingress-nginx | 1 | 1 | 9 | 0 | 11 |
+| kube-system | 2 | 3 | 5 | 0 | 10 |
 | trivy-system | 0 | 0 | 1 | 0 | 1 |
 
 ### Métriques Spécifiques aux Bibliothèques
 | Bibliothèque | namespaces Affectées | Total CVE |
 |--------------|-----------------------|-----------|
-| stdlib | ingress-nginx, trivy-system, kube-system | 9 |
+| stdlib | kube-system, ingress-nginx, trivy-system | 10 |
 | busybox | kps | 4 |
 | busybox-binsh | kps | 4 |
 | libcrypto3 | kps | 4 |
 | libssl3 | kps | 4 |
 | ssl_client | kps | 4 |
 | libexpat | kps | 3 |
-| golang.org/x/net | ingress-nginx, kube-system | 1 |
-| google.golang.org/protobuf | ingress-nginx, kube-system | 1 |
+| golang.org/x/net | ingress-nginx | 1 |
+| google.golang.org/protobuf | ingress-nginx | 1 |
 | certifi | kps | 1 |
 | idna | kps | 1 |
 | requests | kps | 1 |
 | urllib3 | kps | 1 |
+| go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc | kube-system | 1 |
+| gopkg.in/square/go-jose.v2 | kube-system | 1 |
 
 ### Observations Clés
-* La majorité des CVE sont classées comme étant de gravité moyenne (82%), avec 7% critiques, 9% élevées, 82% moyennes, 3% basses, et 0% inconnues.
-* kube-system est l'application la plus affectée avec un total de 53 CVE, incluant 5 critiques, 5 élevées, 43 moyennes et 0 basses.
-* kps a également un nombre significatif de CVE (27), incluant 0 critiques, 2 élevées, 22 moyennes et 3 basses.
+* La majorité des CVE sont classées comme étant de gravité moyenne (76%), avec 6% critiques, 12% élevées, 76% moyennes, 6% basses, et 0% inconnues.
+* kps est l'application la plus affectée avec un total de 27 CVE, incluant 0 critiques, 2 élevées, 22 moyennes et 3 basses.
 * ingress-nginx a également un nombre significatif de CVE (11), incluant 1 critiques, 1 élevées, 9 moyennes et 0 basses.
-* La bibliothèque stdlib est récurrente à travers 9 CVE et 3 namespaces (ingress-nginx, kube-system, trivy-system), indiquant des vulnérabilités communes dans cette bibliothèque.
+* kube-system a également un nombre significatif de CVE (10), incluant 2 critiques, 3 élevées, 5 moyennes et 0 basses.
+* La bibliothèque stdlib est récurrente à travers 10 CVE et 3 namespaces (ingress-nginx, kube-system, trivy-system), indiquant des vulnérabilités communes dans cette bibliothèque.
 * La bibliothèque busybox est récurrente à travers 4 CVE et 1 namespaces (kps), indiquant des vulnérabilités communes dans cette bibliothèque.
 * La bibliothèque busybox-binsh est récurrente à travers 4 CVE et 1 namespaces (kps), indiquant des vulnérabilités communes dans cette bibliothèque.
 
@@ -69,20 +71,22 @@
 
 | CVE ID | namespaces |
 |--------|--------------|
-| [CVE-2023-45288](#cve-2023-45288) | ingress-nginx, kube-system |
+| [CVE-2023-45288](#cve-2023-45288) | ingress-nginx |
 | [CVE-2023-52425](#cve-2023-52425) | kps |
 | [CVE-2024-28757](#cve-2024-28757) | kps |
+| [CVE-2024-24788](#cve-2024-24788) | kube-system |
+| [CVE-2023-47108](#cve-2023-47108) | kube-system |
 ### Details CVE Moyennes
 
 | CVE ID | namespaces |
 |--------|--------------|
-| [CVE-2023-45288](#cve-2023-45288) | ingress-nginx, kube-system |
-| [CVE-2024-24786](#cve-2024-24786) | ingress-nginx, kube-system |
-| [CVE-2023-45289](#cve-2023-45289) | ingress-nginx, kube-system |
-| [CVE-2023-45290](#cve-2023-45290) | ingress-nginx, kube-system |
-| [CVE-2024-24783](#cve-2024-24783) | ingress-nginx, kube-system |
-| [CVE-2024-24784](#cve-2024-24784) | ingress-nginx, kube-system |
-| [CVE-2024-24785](#cve-2024-24785) | ingress-nginx, kube-system |
+| [CVE-2023-45288](#cve-2023-45288) | ingress-nginx |
+| [CVE-2024-24786](#cve-2024-24786) | ingress-nginx |
+| [CVE-2023-45289](#cve-2023-45289) | ingress-nginx |
+| [CVE-2023-45290](#cve-2023-45290) | ingress-nginx |
+| [CVE-2024-24783](#cve-2024-24783) | ingress-nginx |
+| [CVE-2024-24784](#cve-2024-24784) | ingress-nginx |
+| [CVE-2024-24785](#cve-2024-24785) | ingress-nginx |
 | [CVE-2024-24789](#cve-2024-24789) | ingress-nginx, kube-system |
 | [CVE-2024-24791](#cve-2024-24791) | ingress-nginx, kube-system, trivy-system |
 | [CVE-2023-42363](#cve-2023-42363) | kps |
@@ -96,6 +100,7 @@
 | [CVE-2024-3651](#cve-2024-3651) | kps |
 | [CVE-2024-35195](#cve-2024-35195) | kps |
 | [CVE-2024-37891](#cve-2024-37891) | kps |
+| [CVE-2024-28180](#cve-2024-28180) | kube-system |
 ### Details CVE Basses
 
 | CVE ID | namespaces |
@@ -116,7 +121,7 @@
 **Gravité:** CRITICAL (9.8)  
 **namespaces Affectées:** kube-system  
 **Details:**
-- stdlib (Versions: 1.20.13)  
+- stdlib (Versions: 1.22.2)  
 - Titre: golang: net/netip: Unexpected behavior from Is methods for IPv4-mapped IPv6 addresses  
 - Date de publication: 2024-06-05T16:15:10Z  
 - Dernière modification: 2024-06-18T17:59:12Z  
@@ -125,34 +130,7 @@
 **Gravité:** CRITICAL (9.8)  
 **namespaces Affectées:** kube-system  
 **Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: net/netip: Unexpected behavior from Is methods for IPv4-mapped IPv6 addresses  
-- Date de publication: 2024-06-05T16:15:10Z  
-- Dernière modification: 2024-06-18T17:59:12Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24790  
-#### CVE-2024-24790
-**Gravité:** CRITICAL (9.8)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: net/netip: Unexpected behavior from Is methods for IPv4-mapped IPv6 addresses  
-- Date de publication: 2024-06-05T16:15:10Z  
-- Dernière modification: 2024-06-18T17:59:12Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24790  
-#### CVE-2024-24790
-**Gravité:** CRITICAL (9.8)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: net/netip: Unexpected behavior from Is methods for IPv4-mapped IPv6 addresses  
-- Date de publication: 2024-06-05T16:15:10Z  
-- Dernière modification: 2024-06-18T17:59:12Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24790  
-#### CVE-2024-24790
-**Gravité:** CRITICAL (9.8)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
+- stdlib (Versions: 1.22.2)  
 - Titre: golang: net/netip: Unexpected behavior from Is methods for IPv4-mapped IPv6 addresses  
 - Date de publication: 2024-06-05T16:15:10Z  
 - Dernière modification: 2024-06-18T17:59:12Z  
@@ -185,51 +163,33 @@
 - Date de publication: 2024-03-10T05:15:06Z  
 - Dernière modification: 2024-05-01T19:15:22Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-28757  
-#### CVE-2023-45288
+#### CVE-2024-24788
 **Gravité:** HIGH (7.5)  
 **namespaces Affectées:** kube-system  
 **Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: net/http, x/net/http2: unlimited number of CONTINUATION frames causes DoS  
-- Date de publication: 2024-04-04T21:15:16Z  
-- Dernière modification: 2024-05-01T18:15:10Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45288  
-#### CVE-2023-45288
-**Gravité:** HIGH (5.3)  
+- stdlib (Versions: 1.22.2)  
+- Titre: golang: net: malformed DNS message can cause infinite loop  
+- Date de publication: 2024-05-08T16:15:08Z  
+- Dernière modification: 2024-06-14T13:15:50Z  
+- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24788  
+#### CVE-2023-47108
+**Gravité:** HIGH (7.5)  
 **namespaces Affectées:** kube-system  
 **Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: net/http, x/net/http2: unlimited number of CONTINUATION frames causes DoS  
-- Date de publication: 2024-04-04T21:15:16Z  
-- Dernière modification: 2024-05-01T18:15:10Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45288  
-#### CVE-2023-45288
-**Gravité:** HIGH (5.3)  
+- go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc (Versions: v0.42.0)  
+- Titre: opentelemetry-go-contrib: DoS vulnerability in otelgrpc due to unbound cardinality metrics  
+- Date de publication: 2023-11-10T19:15:16Z  
+- Dernière modification: 2023-11-20T19:34:26Z  
+- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-47108  
+#### CVE-2024-24788
+**Gravité:** HIGH (7.5)  
 **namespaces Affectées:** kube-system  
 **Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: net/http, x/net/http2: unlimited number of CONTINUATION frames causes DoS  
-- Date de publication: 2024-04-04T21:15:16Z  
-- Dernière modification: 2024-05-01T18:15:10Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45288  
-#### CVE-2023-45288
-**Gravité:** HIGH (5.3)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: net/http, x/net/http2: unlimited number of CONTINUATION frames causes DoS  
-- Date de publication: 2024-04-04T21:15:16Z  
-- Dernière modification: 2024-05-01T18:15:10Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45288  
-#### CVE-2023-45288
-**Gravité:** HIGH (5.3)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: net/http, x/net/http2: unlimited number of CONTINUATION frames causes DoS  
-- Date de publication: 2024-04-04T21:15:16Z  
-- Dernière modification: 2024-05-01T18:15:10Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45288  
+- stdlib (Versions: 1.22.2)  
+- Titre: golang: net: malformed DNS message can cause infinite loop  
+- Date de publication: 2024-05-08T16:15:08Z  
+- Dernière modification: 2024-06-14T13:15:50Z  
+- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24788  
 ### Details CVE Moyennes
 #### CVE-2023-45288
 **Gravité:** MEDIUM (7.5)  
@@ -304,13 +264,13 @@
 - Dernière modification: 2024-07-03T01:48:25Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24789  
 #### CVE-2024-24791
-**Gravité:** MEDIUM (N/A)  
+**Gravité:** MEDIUM (7.5)  
 **namespaces Affectées:** ingress-nginx  
 **Details:**
 - stdlib (Versions: 1.21.6)  
 - Titre: net/http: Denial of service due to improper 100-continue handling in net/http  
 - Date de publication: 2024-07-02T22:15:04Z  
-- Dernière modification: 2024-07-03T12:53:24Z  
+- Dernière modification: 2024-07-08T14:17:39Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24791  
 #### CVE-2023-42363
 **Gravité:** MEDIUM (5.5)  
@@ -484,13 +444,13 @@
 - Dernière modification: 2023-11-30T05:08:23Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2023-42366  
 #### CVE-2024-3651
-**Gravité:** MEDIUM (6.2)  
+**Gravité:** MEDIUM (6.5)  
 **namespaces Affectées:** kps  
 **Details:**
 - idna (Versions: 3.6)  
 - Titre: python-idna: potential DoS via resource consumption via specially crafted inputs to idna.encode()  
 - Date de publication: 2024-07-07T18:15:09Z  
-- Dernière modification: 2024-07-07T18:15:09Z  
+- Dernière modification: 2024-07-08T15:49:22Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-3651  
 #### CVE-2024-35195
 **Gravité:** MEDIUM (5.6)  
@@ -510,401 +470,59 @@
 - Date de publication: 2024-06-17T20:15:13Z  
 - Dernière modification: 2024-06-20T12:44:22Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-37891  
-#### CVE-2023-45288
+#### CVE-2024-24789
+**Gravité:** MEDIUM (5.5)  
+**namespaces Affectées:** kube-system  
+**Details:**
+- stdlib (Versions: 1.22.2)  
+- Titre: golang: archive/zip: Incorrect handling of certain ZIP files  
+- Date de publication: 2024-06-05T16:15:10Z  
+- Dernière modification: 2024-07-03T01:48:25Z  
+- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24789  
+#### CVE-2024-24791
 **Gravité:** MEDIUM (7.5)  
 **namespaces Affectées:** kube-system  
 **Details:**
-- golang.org/x/net (Versions: v0.17.0)  
-- Titre: golang: net/http, x/net/http2: unlimited number of CONTINUATION frames causes DoS  
-- Date de publication: 2024-04-04T21:15:16Z  
-- Dernière modification: 2024-05-01T18:15:10Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45288  
-#### CVE-2024-24786
-**Gravité:** MEDIUM (5.9)  
+- stdlib (Versions: 1.22.2)  
+- Titre: net/http: Denial of service due to improper 100-continue handling in net/http  
+- Date de publication: 2024-07-02T22:15:04Z  
+- Dernière modification: 2024-07-08T14:17:39Z  
+- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24791  
+#### CVE-2024-28180
+**Gravité:** MEDIUM (4.3)  
 **namespaces Affectées:** kube-system  
 **Details:**
-- google.golang.org/protobuf (Versions: v1.31.0)  
-- Titre: golang-protobuf: encoding/protojson, internal/encoding/json: infinite loop in protojson.Unmarshal when unmarshaling certain forms of invalid JSON  
-- Date de publication: 2024-03-05T23:15:07Z  
-- Dernière modification: 2024-06-10T18:15:26Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24786  
-#### CVE-2023-45289
-**Gravité:** MEDIUM (5.3)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: net/http/cookiejar: incorrect forwarding of sensitive headers and cookies on HTTP redirect  
-- Date de publication: 2024-03-05T23:15:07Z  
-- Dernière modification: 2024-05-01T17:15:25Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45289  
-#### CVE-2023-45290
-**Gravité:** MEDIUM (5.3)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: net/http: memory exhaustion in Request.ParseMultipartForm  
-- Date de publication: 2024-03-05T23:15:07Z  
-- Dernière modification: 2024-05-01T17:15:26Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45290  
-#### CVE-2024-24783
-**Gravité:** MEDIUM (5.9)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: crypto/x509: Verify panics on certificates with an unknown public key algorithm  
-- Date de publication: 2024-03-05T23:15:07Z  
-- Dernière modification: 2024-05-01T17:15:29Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24783  
-#### CVE-2024-24784
-**Gravité:** MEDIUM (5.4)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: net/mail: comments in display names are incorrectly handled  
-- Date de publication: 2024-03-05T23:15:07Z  
-- Dernière modification: 2024-05-01T17:15:29Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24784  
-#### CVE-2024-24785
-**Gravité:** MEDIUM (6.5)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: html/template: errors returned from MarshalJSON methods may break template escaping  
-- Date de publication: 2024-03-05T23:15:07Z  
-- Dernière modification: 2024-05-01T17:15:29Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24785  
+- gopkg.in/square/go-jose.v2 (Versions: v2.6.0)  
+- Titre: jose-go: improper handling of highly compressed data  
+- Date de publication: 2024-03-09T01:15:07Z  
+- Dernière modification: 2024-06-12T02:15:09Z  
+- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-28180  
 #### CVE-2024-24789
 **Gravité:** MEDIUM (5.5)  
 **namespaces Affectées:** kube-system  
 **Details:**
-- stdlib (Versions: 1.20.13)  
+- stdlib (Versions: 1.22.2)  
 - Titre: golang: archive/zip: Incorrect handling of certain ZIP files  
 - Date de publication: 2024-06-05T16:15:10Z  
 - Dernière modification: 2024-07-03T01:48:25Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24789  
 #### CVE-2024-24791
-**Gravité:** MEDIUM (N/A)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: net/http: Denial of service due to improper 100-continue handling in net/http  
-- Date de publication: 2024-07-02T22:15:04Z  
-- Dernière modification: 2024-07-03T12:53:24Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24791  
-#### CVE-2023-45288
 **Gravité:** MEDIUM (7.5)  
 **namespaces Affectées:** kube-system  
 **Details:**
-- golang.org/x/net (Versions: v0.17.0)  
-- Titre: golang: net/http, x/net/http2: unlimited number of CONTINUATION frames causes DoS  
-- Date de publication: 2024-04-04T21:15:16Z  
-- Dernière modification: 2024-05-01T18:15:10Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45288  
-#### CVE-2024-24786
-**Gravité:** MEDIUM (5.9)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- google.golang.org/protobuf (Versions: v1.31.0)  
-- Titre: golang-protobuf: encoding/protojson, internal/encoding/json: infinite loop in protojson.Unmarshal when unmarshaling certain forms of invalid JSON  
-- Date de publication: 2024-03-05T23:15:07Z  
-- Dernière modification: 2024-06-10T18:15:26Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24786  
-#### CVE-2023-45289
-**Gravité:** MEDIUM (5.3)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: net/http/cookiejar: incorrect forwarding of sensitive headers and cookies on HTTP redirect  
-- Date de publication: 2024-03-05T23:15:07Z  
-- Dernière modification: 2024-05-01T17:15:25Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45289  
-#### CVE-2023-45290
-**Gravité:** MEDIUM (5.3)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: net/http: memory exhaustion in Request.ParseMultipartForm  
-- Date de publication: 2024-03-05T23:15:07Z  
-- Dernière modification: 2024-05-01T17:15:26Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45290  
-#### CVE-2024-24783
-**Gravité:** MEDIUM (5.9)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: crypto/x509: Verify panics on certificates with an unknown public key algorithm  
-- Date de publication: 2024-03-05T23:15:07Z  
-- Dernière modification: 2024-05-01T17:15:29Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24783  
-#### CVE-2024-24784
-**Gravité:** MEDIUM (5.4)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: net/mail: comments in display names are incorrectly handled  
-- Date de publication: 2024-03-05T23:15:07Z  
-- Dernière modification: 2024-05-01T17:15:29Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24784  
-#### CVE-2024-24785
-**Gravité:** MEDIUM (6.5)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: html/template: errors returned from MarshalJSON methods may break template escaping  
-- Date de publication: 2024-03-05T23:15:07Z  
-- Dernière modification: 2024-05-01T17:15:29Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24785  
-#### CVE-2024-24789
-**Gravité:** MEDIUM (5.5)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: archive/zip: Incorrect handling of certain ZIP files  
-- Date de publication: 2024-06-05T16:15:10Z  
-- Dernière modification: 2024-07-03T01:48:25Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24789  
-#### CVE-2024-24791
-**Gravité:** MEDIUM (N/A)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
+- stdlib (Versions: 1.22.2)  
 - Titre: net/http: Denial of service due to improper 100-continue handling in net/http  
 - Date de publication: 2024-07-02T22:15:04Z  
-- Dernière modification: 2024-07-03T12:53:24Z  
+- Dernière modification: 2024-07-08T14:17:39Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24791  
-#### CVE-2023-45288
+#### CVE-2024-24791
 **Gravité:** MEDIUM (7.5)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- golang.org/x/net (Versions: v0.17.0)  
-- Titre: golang: net/http, x/net/http2: unlimited number of CONTINUATION frames causes DoS  
-- Date de publication: 2024-04-04T21:15:16Z  
-- Dernière modification: 2024-05-01T18:15:10Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45288  
-#### CVE-2024-24786
-**Gravité:** MEDIUM (5.9)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- google.golang.org/protobuf (Versions: v1.31.0)  
-- Titre: golang-protobuf: encoding/protojson, internal/encoding/json: infinite loop in protojson.Unmarshal when unmarshaling certain forms of invalid JSON  
-- Date de publication: 2024-03-05T23:15:07Z  
-- Dernière modification: 2024-06-10T18:15:26Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24786  
-#### CVE-2023-45289
-**Gravité:** MEDIUM (5.3)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: net/http/cookiejar: incorrect forwarding of sensitive headers and cookies on HTTP redirect  
-- Date de publication: 2024-03-05T23:15:07Z  
-- Dernière modification: 2024-05-01T17:15:25Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45289  
-#### CVE-2023-45290
-**Gravité:** MEDIUM (5.3)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: net/http: memory exhaustion in Request.ParseMultipartForm  
-- Date de publication: 2024-03-05T23:15:07Z  
-- Dernière modification: 2024-05-01T17:15:26Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45290  
-#### CVE-2024-24783
-**Gravité:** MEDIUM (5.9)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: crypto/x509: Verify panics on certificates with an unknown public key algorithm  
-- Date de publication: 2024-03-05T23:15:07Z  
-- Dernière modification: 2024-05-01T17:15:29Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24783  
-#### CVE-2024-24784
-**Gravité:** MEDIUM (5.4)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: net/mail: comments in display names are incorrectly handled  
-- Date de publication: 2024-03-05T23:15:07Z  
-- Dernière modification: 2024-05-01T17:15:29Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24784  
-#### CVE-2024-24785
-**Gravité:** MEDIUM (6.5)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: html/template: errors returned from MarshalJSON methods may break template escaping  
-- Date de publication: 2024-03-05T23:15:07Z  
-- Dernière modification: 2024-05-01T17:15:29Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24785  
-#### CVE-2024-24789
-**Gravité:** MEDIUM (5.5)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: archive/zip: Incorrect handling of certain ZIP files  
-- Date de publication: 2024-06-05T16:15:10Z  
-- Dernière modification: 2024-07-03T01:48:25Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24789  
-#### CVE-2024-24791
-**Gravité:** MEDIUM (N/A)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: net/http: Denial of service due to improper 100-continue handling in net/http  
-- Date de publication: 2024-07-02T22:15:04Z  
-- Dernière modification: 2024-07-03T12:53:24Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24791  
-#### CVE-2023-45288
-**Gravité:** MEDIUM (7.5)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- golang.org/x/net (Versions: v0.17.0)  
-- Titre: golang: net/http, x/net/http2: unlimited number of CONTINUATION frames causes DoS  
-- Date de publication: 2024-04-04T21:15:16Z  
-- Dernière modification: 2024-05-01T18:15:10Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45288  
-#### CVE-2024-24786
-**Gravité:** MEDIUM (5.9)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- google.golang.org/protobuf (Versions: v1.31.0)  
-- Titre: golang-protobuf: encoding/protojson, internal/encoding/json: infinite loop in protojson.Unmarshal when unmarshaling certain forms of invalid JSON  
-- Date de publication: 2024-03-05T23:15:07Z  
-- Dernière modification: 2024-06-10T18:15:26Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24786  
-#### CVE-2023-45289
-**Gravité:** MEDIUM (5.3)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: net/http/cookiejar: incorrect forwarding of sensitive headers and cookies on HTTP redirect  
-- Date de publication: 2024-03-05T23:15:07Z  
-- Dernière modification: 2024-05-01T17:15:25Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45289  
-#### CVE-2023-45290
-**Gravité:** MEDIUM (5.3)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: net/http: memory exhaustion in Request.ParseMultipartForm  
-- Date de publication: 2024-03-05T23:15:07Z  
-- Dernière modification: 2024-05-01T17:15:26Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45290  
-#### CVE-2024-24783
-**Gravité:** MEDIUM (5.9)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: crypto/x509: Verify panics on certificates with an unknown public key algorithm  
-- Date de publication: 2024-03-05T23:15:07Z  
-- Dernière modification: 2024-05-01T17:15:29Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24783  
-#### CVE-2024-24784
-**Gravité:** MEDIUM (5.4)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: net/mail: comments in display names are incorrectly handled  
-- Date de publication: 2024-03-05T23:15:07Z  
-- Dernière modification: 2024-05-01T17:15:29Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24784  
-#### CVE-2024-24785
-**Gravité:** MEDIUM (6.5)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: html/template: errors returned from MarshalJSON methods may break template escaping  
-- Date de publication: 2024-03-05T23:15:07Z  
-- Dernière modification: 2024-05-01T17:15:29Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24785  
-#### CVE-2024-24789
-**Gravité:** MEDIUM (5.5)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: archive/zip: Incorrect handling of certain ZIP files  
-- Date de publication: 2024-06-05T16:15:10Z  
-- Dernière modification: 2024-07-03T01:48:25Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24789  
-#### CVE-2024-24791
-**Gravité:** MEDIUM (N/A)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: net/http: Denial of service due to improper 100-continue handling in net/http  
-- Date de publication: 2024-07-02T22:15:04Z  
-- Dernière modification: 2024-07-03T12:53:24Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24791  
-#### CVE-2023-45289
-**Gravité:** MEDIUM (5.3)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: net/http/cookiejar: incorrect forwarding of sensitive headers and cookies on HTTP redirect  
-- Date de publication: 2024-03-05T23:15:07Z  
-- Dernière modification: 2024-05-01T17:15:25Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45289  
-#### CVE-2023-45290
-**Gravité:** MEDIUM (5.3)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: net/http: memory exhaustion in Request.ParseMultipartForm  
-- Date de publication: 2024-03-05T23:15:07Z  
-- Dernière modification: 2024-05-01T17:15:26Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2023-45290  
-#### CVE-2024-24783
-**Gravité:** MEDIUM (5.9)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: crypto/x509: Verify panics on certificates with an unknown public key algorithm  
-- Date de publication: 2024-03-05T23:15:07Z  
-- Dernière modification: 2024-05-01T17:15:29Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24783  
-#### CVE-2024-24784
-**Gravité:** MEDIUM (5.4)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: net/mail: comments in display names are incorrectly handled  
-- Date de publication: 2024-03-05T23:15:07Z  
-- Dernière modification: 2024-05-01T17:15:29Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24784  
-#### CVE-2024-24785
-**Gravité:** MEDIUM (6.5)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: html/template: errors returned from MarshalJSON methods may break template escaping  
-- Date de publication: 2024-03-05T23:15:07Z  
-- Dernière modification: 2024-05-01T17:15:29Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24785  
-#### CVE-2024-24789
-**Gravité:** MEDIUM (5.5)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: golang: archive/zip: Incorrect handling of certain ZIP files  
-- Date de publication: 2024-06-05T16:15:10Z  
-- Dernière modification: 2024-07-03T01:48:25Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24789  
-#### CVE-2024-24791
-**Gravité:** MEDIUM (N/A)  
-**namespaces Affectées:** kube-system  
-**Details:**
-- stdlib (Versions: 1.20.13)  
-- Titre: net/http: Denial of service due to improper 100-continue handling in net/http  
-- Date de publication: 2024-07-02T22:15:04Z  
-- Dernière modification: 2024-07-03T12:53:24Z  
-- Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24791  
-#### CVE-2024-24791
-**Gravité:** MEDIUM (N/A)  
 **namespaces Affectées:** trivy-system  
 **Details:**
 - stdlib (Versions: 1.22.4)  
 - Titre: net/http: Denial of service due to improper 100-continue handling in net/http  
 - Date de publication: 2024-07-02T22:15:04Z  
-- Dernière modification: 2024-07-03T12:53:24Z  
+- Dernière modification: 2024-07-08T14:17:39Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-24791  
 ### Details CVE Basses
 #### CVE-2024-2511
@@ -932,5 +550,5 @@
 - certifi (Versions: 2024.2.2)  
 - Titre: python-certifi: Remove root certificates from `GLOBALTRUST` from the root store  
 - Date de publication: 2024-07-05T19:15:10Z  
-- Dernière modification: 2024-07-05T19:15:10Z  
+- Dernière modification: 2024-07-08T15:49:22Z  
 - Lien primaire: https://avd.aquasec.com/nvd/cve-2024-39689  
