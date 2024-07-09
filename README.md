@@ -66,12 +66,12 @@ Il n'y a actuellement aucun point de terminaison public dans ce rapport.
 
 ### Observations Clés
 * kube-system est l'application la plus affectée avec un total de 53 CVE.
-* kps a également un nombre significatif de CVE (27).
-* ingress-nginx a également un nombre significatif de CVE (11).
-* La majorité des CVE sont classées comme étant de haute gravité (9%), avec seulement une petite fraction étant critiques (7%).
-* La bibliothèque stdlib est récurrente à travers plusieurs CVE et applications (trivy-system, ingress-nginx, kube-system), indiquant des vulnérabilités communes dans cette bibliothèque.
-* La bibliothèque golang.org/x/net est récurrente à travers plusieurs CVE et applications (ingress-nginx, kube-system), indiquant des vulnérabilités communes dans cette bibliothèque.
-* La bibliothèque google.golang.org/protobuf est récurrente à travers plusieurs CVE et applications (ingress-nginx, kube-system), indiquant des vulnérabilités communes dans cette bibliothèque.
+* kps a également un nombre significatif de CVE (27), incluant 0 critiques et 2 élevées.
+* ingress-nginx a également un nombre significatif de CVE (11), incluant 1 critiques et 1 élevées.
+* La majorité des CVE sont classées comme étant de haute gravité (9%), avec 7% étant critiques.
+* La bibliothèque stdlib est récurrente à travers 9 CVE et applications (trivy-system, ingress-nginx, kube-system), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque golang.org/x/net est récurrente à travers 1 CVE et applications (ingress-nginx, kube-system), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque google.golang.org/protobuf est récurrente à travers 1 CVE et applications (ingress-nginx, kube-system), indiquant des vulnérabilités communes dans cette bibliothèque.
 
 ## Liste Détaillée des CVE
 ### CVE Critiques
