@@ -50,15 +50,15 @@ Il n'y a actuellement aucun point de terminaison public dans ce rapport.
 ### Métriques Spécifiques aux Bibliothèques
 | Bibliothèque | Applications Affectées | Total CVE |
 |--------------|-----------------------|-----------|
-| stdlib | trivy-system, ingress-nginx, kube-system | 9 |
+| stdlib | kube-system, ingress-nginx, trivy-system | 9 |
 | busybox | kps | 4 |
 | busybox-binsh | kps | 4 |
 | libcrypto3 | kps | 4 |
 | libssl3 | kps | 4 |
 | ssl_client | kps | 4 |
 | libexpat | kps | 3 |
-| golang.org/x/net | ingress-nginx, kube-system | 1 |
-| google.golang.org/protobuf | ingress-nginx, kube-system | 1 |
+| golang.org/x/net | kube-system, ingress-nginx | 1 |
+| google.golang.org/protobuf | kube-system, ingress-nginx | 1 |
 | certifi | kps | 1 |
 | idna | kps | 1 |
 | requests | kps | 1 |
@@ -69,12 +69,10 @@ Il n'y a actuellement aucun point de terminaison public dans ce rapport.
 * kps a également un nombre significatif de CVE (27), dont 0 critiques, 2 élevées, 22 moyennes, et 3 basses.
 * ingress-nginx a également un nombre significatif de CVE (11), dont 1 critiques, 1 élevées, 9 moyennes, et 0 basses.
 * La majorité des CVE sont classées comme étant de haute gravité (9%), avec seulement une petite fraction étant critiques (7%).
-* La bibliothèque stdlib est récurrente à travers plusieurs CVE et applications (trivy-system, ingress-nginx, kube-system), indiquant des vulnérabilités communes dans cette bibliothèque.
-* La bibliothèque golang.org/x/net est récurrente à travers plusieurs CVE et applications (ingress-nginx, kube-system), indiquant des vulnérabilités communes dans cette bibliothèque.
-* La bibliothèque google.golang.org/protobuf est récurrente à travers plusieurs CVE et applications (ingress-nginx, kube-system), indiquant des vulnérabilités communes dans cette bibliothèque.
-
-## Liste Détaillée des CVE
-#### CRITICAL
+* La bibliothèque stdlib est récurrente à travers plusieurs CVE et applications (kube-system, ingress-nginx, trivy-system), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque golang.org/x/net est récurrente à travers plusieurs CVE et applications (kube-system, ingress-nginx), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque google.golang.org/protobuf est récurrente à travers plusieurs CVE et applications (kube-system, ingress-nginx), indiquant des vulnérabilités communes dans cette bibliothèque.
+### CVE Critiques
 | CVE ID | Applications |
 |--------|--------------|
 | CVE-2024-24790 | ingress-nginx |
@@ -83,8 +81,7 @@ Il n'y a actuellement aucun point de terminaison public dans ce rapport.
 | CVE-2024-24790 | kube-system |
 | CVE-2024-24790 | kube-system |
 | CVE-2024-24790 | kube-system |
-
-#### HIGH
+### CVE Élevées
 | CVE ID | Applications |
 |--------|--------------|
 | CVE-2023-45288 | ingress-nginx |
@@ -95,8 +92,14 @@ Il n'y a actuellement aucun point de terminaison public dans ce rapport.
 | CVE-2023-45288 | kube-system |
 | CVE-2023-45288 | kube-system |
 | CVE-2023-45288 | kube-system |
+### CVE Moyennes
+| CVE ID | Applications |
+|--------|--------------|
+### CVE Basses
+| CVE ID | Applications |
+|--------|--------------|
 
-
+## Liste Détaillée des CVE
 <details>
 <summary>Afficher tous les CVE</summary>
 ### CVE Critiques
