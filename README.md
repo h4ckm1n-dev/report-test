@@ -5,8 +5,7 @@
 ## Rapport sur les CVE pour le Cluster de Production
 
 ### Aperçu 
-Ce rapport fournit une liste détaillée des vulnérabilités et expositions communes (CVE) présentes dans le cluster de production. Chaque entrée inclut l'identifiant CVE, l'application affectée, et les bibliothèques ou composants associés. Le rapport démontre que toutes les CVE répertoriées sont dues à des mises à jour non publiées par leurs mainteneurs respectifs. Nous utilisons un outil appelé Renovate pour être notifiés des mises à jour de composants disponibles sur notre cluster, garantissant que nous exécutons toujours la dernière version mise à disposition par le mainteneur.
-
+Ce rapport fournit une liste détaillée des vulnérabilités et expositions communes (CVE) présentes dans le cluster de production. Chaque entrée inclut l'identifiant CVE, l'application affectée, et les bibliothèques ou composants associés. Le rapport démontre que toutes les CVE répertoriées sont dues à des mises à jour non publiées par leurs mainteneurs respectifs. Pour assurer la sécurité et la stabilité de notre environnement, nous utilisons un outil appelé Renovate. Cet outil nous notifie dès qu'une mise à jour de composant est disponible sur notre cluster, garantissant ainsi que nous exécutons toujours la dernière version mise à disposition par le mainteneur. Cette approche proactive nous permet de réduire les risques de sécurité en maintenant nos systèmes à jour avec les correctifs et améliorations les plus récents.
 ## Rapport sur les Ingress Kubernetes
 | Namespace | Ingress Name | Host | Address | Type |
 |-----------|--------------|------|---------|------|
@@ -37,15 +36,15 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 ### Métriques Spécifiques aux Bibliothèques
 | Bibliothèque | namespaces Affectées | Total CVE |
 |--------------|-----------------------|-----------|
-| stdlib | kube-system, ingress-nginx, trivy-system | 9 |
+| stdlib | trivy-system, ingress-nginx, kube-system | 9 |
 | busybox | kps | 4 |
 | busybox-binsh | kps | 4 |
 | libcrypto3 | kps | 4 |
 | libssl3 | kps | 4 |
 | ssl_client | kps | 4 |
 | libexpat | kps | 3 |
-| golang.org/x/net | kube-system, ingress-nginx | 1 |
-| google.golang.org/protobuf | kube-system, ingress-nginx | 1 |
+| golang.org/x/net | ingress-nginx, kube-system | 1 |
+| google.golang.org/protobuf | ingress-nginx, kube-system | 1 |
 | certifi | kps | 1 |
 | idna | kps | 1 |
 | requests | kps | 1 |
