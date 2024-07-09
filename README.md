@@ -14,7 +14,7 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 | kps | kps-prometheus | prometheus.h4ckm1n.org | 192.168.49.2 | Privé |
 
 > **Note :**
-> Seuls les points de terminaison **publics** sont sensibles, car les autres points de terminaison ne sont accessibles que via un **VPN**.
+> Seuls les points de terminaison publics sont considérés comme sensibles. Tous les autres points de terminaison sont protégés et ne sont accessibles qu'à travers un VPN sécurisé, garantissant que l'accès est strictement limité aux utilisateurs autorisés. Cette configuration renforce notre posture de sécurité en isolant les services internes des menaces externes et en assurant une protection optimale des données et des applications critiques.
 
 
 ### Métriques de Sévérité
@@ -37,15 +37,15 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 ### Métriques Spécifiques aux Bibliothèques
 | Bibliothèque | namespaces Affectées | Total CVE |
 |--------------|-----------------------|-----------|
-| stdlib | ingress-nginx, trivy-system, kube-system | 9 |
+| stdlib | kube-system, ingress-nginx, trivy-system | 9 |
 | busybox | kps | 4 |
 | busybox-binsh | kps | 4 |
 | libcrypto3 | kps | 4 |
 | libssl3 | kps | 4 |
 | ssl_client | kps | 4 |
 | libexpat | kps | 3 |
-| golang.org/x/net | ingress-nginx, kube-system | 1 |
-| google.golang.org/protobuf | ingress-nginx, kube-system | 1 |
+| golang.org/x/net | kube-system, ingress-nginx | 1 |
+| google.golang.org/protobuf | kube-system, ingress-nginx | 1 |
 | certifi | kps | 1 |
 | idna | kps | 1 |
 | requests | kps | 1 |
