@@ -1,7 +1,7 @@
 
 # CVE Report
 
-08/07/2024
+09/07/2024
 ## Rapport sur les CVE pour le Cluster de Production
 
 ### Aperçu 
@@ -36,15 +36,15 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 ### Métriques Spécifiques aux Bibliothèques
 | Bibliothèque | Applications Affectées | Total CVE |
 |--------------|-----------------------|-----------|
-| stdlib | ingress-nginx, kube-system, trivy-system | 9 |
+| stdlib | trivy-system, kube-system, ingress-nginx | 9 |
 | busybox | kps | 4 |
 | busybox-binsh | kps | 4 |
 | libcrypto3 | kps | 4 |
 | libssl3 | kps | 4 |
 | ssl_client | kps | 4 |
 | libexpat | kps | 3 |
-| golang.org/x/net | ingress-nginx, kube-system | 1 |
-| google.golang.org/protobuf | ingress-nginx, kube-system | 1 |
+| golang.org/x/net | kube-system, ingress-nginx | 1 |
+| google.golang.org/protobuf | kube-system, ingress-nginx | 1 |
 | certifi | kps | 1 |
 | idna | kps | 1 |
 | requests | kps | 1 |
@@ -55,9 +55,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 * kps a également un nombre significatif de CVE (27).
 * ingress-nginx a également un nombre significatif de CVE (11).
 * La majorité des CVE sont classées comme étant de haute gravité (9%), avec seulement une petite fraction étant critiques (7%).
-* La bibliothèque stdlib est récurrente à travers plusieurs CVE et applications (applications, cves), indiquant des vulnérabilités communes dans cette bibliothèque.
-* La bibliothèque golang.org/x/net est récurrente à travers plusieurs CVE et applications (applications, cves), indiquant des vulnérabilités communes dans cette bibliothèque.
-* La bibliothèque google.golang.org/protobuf est récurrente à travers plusieurs CVE et applications (applications, cves), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque stdlib est récurrente à travers plusieurs CVE et applications (cves, applications), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque golang.org/x/net est récurrente à travers plusieurs CVE et applications (cves, applications), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque google.golang.org/protobuf est récurrente à travers plusieurs CVE et applications (cves, applications), indiquant des vulnérabilités communes dans cette bibliothèque.
 
 ## Liste Détaillée des CVE
 ### CVE Critiques
