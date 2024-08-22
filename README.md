@@ -39,9 +39,9 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 ### Métriques Spécifiques aux Bibliothèques
 | Bibliothèque | Applications Affectées | Total CVE |
 |--------------|-----------------------|-----------|
-| stdlib | prom-stack, kube-system, trivy | 30 |
-| golang.org/x/net | prom-stack, kube-system | 5 |
-| google.golang.org/grpc | kube-system, trivy | 3 |
+| stdlib | trivy, kube-system, prom-stack | 30 |
+| golang.org/x/net | kube-system, prom-stack | 5 |
+| google.golang.org/grpc | trivy, kube-system | 3 |
 | busybox | trivy | 2 |
 | busybox-binsh | trivy | 2 |
 | libcrypto3 | trivy | 2 |
@@ -58,9 +58,15 @@ Ce rapport fournit une liste détaillée des vulnérabilités et expositions com
 * trivy a également un nombre significatif de CVE (17).
 * prom-stack a également un nombre significatif de CVE (5).
 * La majorité des CVE sont classées comme étant de haute gravité (30%), avec seulement une petite fraction étant critiques (10%).
-* La bibliothèque stdlib est récurrente à travers plusieurs CVE et applications (applications, cves), indiquant des vulnérabilités communes dans cette bibliothèque.
-* La bibliothèque golang.org/x/net est récurrente à travers plusieurs CVE et applications (applications, cves), indiquant des vulnérabilités communes dans cette bibliothèque.
-* La bibliothèque google.golang.org/grpc est récurrente à travers plusieurs CVE et applications (applications, cves), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque stdlib est récurrente à travers plusieurs CVE et applications (cves, applications), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque golang.org/x/net est récurrente à travers plusieurs CVE et applications (cves, applications), indiquant des vulnérabilités communes dans cette bibliothèque.
+* La bibliothèque google.golang.org/grpc est récurrente à travers plusieurs CVE et applications (cves, applications), indiquant des vulnérabilités communes dans cette bibliothèque.
+
+## Endpoint Analysis
+Total Public Endpoints: 0
+Total Private Endpoints: 2
+Total CVEs in Public Endpoints: 0
+Total CVEs in Private Endpoints: 10
 
 ## Liste Détaillée des CVE
 ### CVE Critiques
